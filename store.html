@@ -3,15 +3,22 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Store — PixelCraftin Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Google Play Store — PixelCraftin Studio</title>
   <meta name="description"
-    content="Pro apps, one-time pricing, no subscriptions — coming soon from PixelCraftin Studio.">
-  <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96">
-  <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
-  <link rel="shortcut icon" href="favicon/favicon.ico">
+    content="Download official Android apps and games published by PixelCraftin Studio on the Google Play Store. Calc+, PdfEditor, Noting Notes, and games.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+  <link rel="shortcut icon" href="favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="manifest" href="favicon/site.webmanifest">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="PixelCraftin">
+  <meta name="theme-color" content="#0a0a0c">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -23,7 +30,7 @@
       <a href="index.html" class="brand">PixelCraftin <span>studio</span></a>
       <nav class="nav-links" data-nav>
         <a href="apps.html">Apps</a>
-        <a href="store.html">Store</a>
+        <a href="store.html" class="active">Store</a>
         <a href="timeline.html">Timeline</a>
         <a href="contact.html">Contact</a>
       </nav>
@@ -46,28 +53,272 @@
   </header>
   <nav class="mobile-panel" data-mobile-panel data-nav>
     <a href="apps.html">Apps</a>
-    <a href="store.html">Store</a>
+    <a href="store.html" class="active">Store</a>
     <a href="timeline.html">Timeline</a>
     <a href="contact.html">Contact</a>
   </nav>
 
   <main class="page">
-    <section class="hero store-hero" style="min-height:80vh;">
+
+    <!-- Store Hero -->
+    <section class="store-hero">
       <div class="wrap">
-        <div class="eyebrow rule">Store</div>
-        <h1 style="margin-top:22px;">Coming <em>Soon.</em></h1>
-        <p>We're putting the finishing touches on the store.<br>Pro apps, one-time pricing, no subscriptions — almost
-          ready.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="https://play.google.com" target="_blank" rel="noopener">Get our apps on Play
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M13 6l6 6-6 6" />
+        <div class="eyebrow rule" style="display:inline-flex; align-items:center; gap:8px;">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none">
+            <path d="M3.6 1.8A1.8 1.8 0 0 0 3 3.3v17.4a1.8 1.8 0 0 0 .6 1.5l.1.1 9.8-9.8v-.2L3.7 1.7l-.1.1z" fill="#00D3FF"/>
+            <path d="M16.7 15.6l-3.2-3.2v-.2l3.2-3.2.1.1 3.8 2.2c1.1.6 1.1 1.6 0 2.2l-3.9 2.1z" fill="#FFCE00"/>
+            <path d="M13.5 12.2L3.6 22.1c.4.4 1 .4 1.7.1l11.4-6.6-3.2-3.4z" fill="#FF3A44"/>
+            <path d="M13.5 11.8l3.2-3.4L5.3 1.8c-.7-.3-1.3-.3-1.7.1l9.9 9.9z" fill="#00E676"/>
+          </svg>
+          Google Play Store Developer Showcase
+        </div>
+        <h1 style="margin-top:20px;">Google Play <em>Apps &amp; Games</em></h1>
+        <p>Explore our official catalog of high-performance tools, creative productivity apps, and immersive games built exclusively for Android and published on the Google Play Store.</p>
+
+        <!-- Google Play Developer Profile Card -->
+        <div class="play-dev-card">
+          <div class="play-dev-info">
+            <div class="play-dev-avatar">P</div>
+            <div class="play-dev-meta">
+              <h3>PixelCraftin Studios <span class="play-verified-badge">✔ Verified Play Developer</span></h3>
+              <div class="play-dev-stats">
+                <span>★ 4.8 Studio Rating</span>
+                <span>•</span>
+                <span>Zero Bloat</span>
+                <span>•</span>
+                <span>Google Play Protect Verified</span>
+              </div>
+            </div>
+          </div>
+          <a class="play-btn" href="https://play.google.com/store/apps/dev?id=PixelCraftin+Studios" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+              <path d="M3.6 1.8A1.8 1.8 0 0 0 3 3.3v17.4a1.8 1.8 0 0 0 .6 1.5l.1.1 9.8-9.8v-.2L3.7 1.7l-.1.1z" fill="#00D3FF"/>
+              <path d="M16.7 15.6l-3.2-3.2v-.2l3.2-3.2.1.1 3.8 2.2c1.1.6 1.1 1.6 0 2.2l-3.9 2.1z" fill="#FFCE00"/>
+              <path d="M13.5 12.2L3.6 22.1c.4.4 1 .4 1.7.1l11.4-6.6-3.2-3.4z" fill="#FF3A44"/>
+              <path d="M13.5 11.8l3.2-3.4L5.3 1.8c-.7-.3-1.3-.3-1.7.1l9.9 9.9z" fill="#00E676"/>
             </svg>
+            <div class="play-btn-text">
+              <span class="play-btn-sub">Open Developer Page</span>
+              <span class="play-btn-title">Google Play</span>
+            </div>
           </a>
-          <a class="btn btn-ghost" href="contact.html">Get notified</a>
         </div>
       </div>
     </section>
+
+    <!-- App & Game Releases Grid -->
+    <section style="padding: 20px 0 60px;">
+      <div class="wrap">
+        
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; margin-bottom: 24px;">
+          <div>
+            <h2 style="font-family:var(--font-display); font-size:clamp(1.8rem, 3.2vw, 2.5rem); margin:0;">Featured Titles</h2>
+            <p style="color:var(--text-muted); font-size:.92rem; margin:6px 0 0;">Native Android architecture, Material Design 3, zero ads, and instant performance.</p>
+          </div>
+        </div>
+
+        <div class="play-grid">
+
+          <!-- Calc+ -->
+          <div class="play-card">
+            <div>
+              <div class="play-card-header">
+                <div class="play-app-icon" style="background: linear-gradient(135deg, #4f46e5, #5c7cfa);">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="4" y="2" width="16" height="20" rx="3" />
+                    <line x1="8" y1="6" x2="16" y2="6" />
+                    <line x1="8" y1="10" x2="10" y2="10" />
+                    <line x1="14" y1="10" x2="16" y2="10" />
+                    <line x1="8" y1="14" x2="10" y2="14" />
+                    <line x1="14" y1="14" x2="16" y2="14" />
+                    <line x1="8" y1="18" x2="16" y2="18" />
+                  </svg>
+                </div>
+                <div class="play-app-info">
+                  <h3>Calc+</h3>
+                  <div class="play-app-cat">Tools • Productivity</div>
+                  <div class="play-rating">★ 4.9 <span style="color:var(--text-faint); font-weight:normal; margin-left:4px;">(1.2K)</span></div>
+                </div>
+              </div>
+              <p style="margin: 16px 0;">A fun, minimal calculator engineered with tactile haptics, smooth history recall, dynamic themes, and zero tracking permissions.</p>
+              <div class="play-tags">
+                <span class="play-tag">No Ads</span>
+                <span class="play-tag">Offline Ready</span>
+                <span class="play-tag">Dark / Light</span>
+              </div>
+            </div>
+            <a class="play-btn" href="https://play.google.com/store/apps/dev?id=PixelCraftin+Studios" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+                <path d="M3.6 1.8A1.8 1.8 0 0 0 3 3.3v17.4a1.8 1.8 0 0 0 .6 1.5l.1.1 9.8-9.8v-.2L3.7 1.7l-.1.1z" fill="#00D3FF"/>
+                <path d="M16.7 15.6l-3.2-3.2v-.2l3.2-3.2.1.1 3.8 2.2c1.1.6 1.1 1.6 0 2.2l-3.9 2.1z" fill="#FFCE00"/>
+                <path d="M13.5 12.2L3.6 22.1c.4.4 1 .4 1.7.1l11.4-6.6-3.2-3.4z" fill="#FF3A44"/>
+                <path d="M13.5 11.8l3.2-3.4L5.3 1.8c-.7-.3-1.3-.3-1.7.1l9.9 9.9z" fill="#00E676"/>
+              </svg>
+              <div class="play-btn-text">
+                <span class="play-btn-sub">GET IT ON</span>
+                <span class="play-btn-title">Google Play</span>
+              </div>
+            </a>
+          </div>
+
+          <!-- PdfEditor Pro -->
+          <div class="play-card">
+            <div>
+              <div class="play-card-header">
+                <div class="play-app-icon" style="background: linear-gradient(135deg, #e03131, #f76707);">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="16" y1="13" x2="8" y2="13" />
+                    <line x1="16" y1="17" x2="8" y2="17" />
+                    <polyline points="10 9 9 9 8 9" />
+                  </svg>
+                </div>
+                <div class="play-app-info">
+                  <h3>PdfEditor Pro</h3>
+                  <div class="play-app-cat">Productivity • Business</div>
+                  <div class="play-rating">★ 4.8 <span style="color:var(--text-faint); font-weight:normal; margin-left:4px;">(3.4K)</span></div>
+                </div>
+              </div>
+              <p style="margin: 16px 0;">All-in-one on-device PDF engine. Split, merge, compress, reorder pages, and sign documents securely without uploading files to the cloud.</p>
+              <div class="play-tags">
+                <span class="play-tag">100% Private</span>
+                <span class="play-tag">Zero Cloud Upload</span>
+                <span class="play-tag">Fast Export</span>
+              </div>
+            </div>
+            <a class="play-btn" href="https://play.google.com/store/apps/dev?id=PixelCraftin+Studios" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+                <path d="M3.6 1.8A1.8 1.8 0 0 0 3 3.3v17.4a1.8 1.8 0 0 0 .6 1.5l.1.1 9.8-9.8v-.2L3.7 1.7l-.1.1z" fill="#00D3FF"/>
+                <path d="M16.7 15.6l-3.2-3.2v-.2l3.2-3.2.1.1 3.8 2.2c1.1.6 1.1 1.6 0 2.2l-3.9 2.1z" fill="#FFCE00"/>
+                <path d="M13.5 12.2L3.6 22.1c.4.4 1 .4 1.7.1l11.4-6.6-3.2-3.4z" fill="#FF3A44"/>
+                <path d="M13.5 11.8l3.2-3.4L5.3 1.8c-.7-.3-1.3-.3-1.7.1l9.9 9.9z" fill="#00E676"/>
+              </svg>
+              <div class="play-btn-text">
+                <span class="play-btn-sub">GET IT ON</span>
+                <span class="play-btn-title">Google Play</span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Noting Notes -->
+          <div class="play-card">
+            <div>
+              <div class="play-card-header">
+                <div class="play-app-icon" style="background: linear-gradient(135deg, #099268, #20c997);">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 20h9" />
+                    <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+                  </svg>
+                </div>
+                <div class="play-app-info">
+                  <h3>Noting Notes</h3>
+                  <div class="play-app-cat">Tools • Notes &amp; Writing</div>
+                  <div class="play-rating">★ 4.7 <span style="color:var(--text-faint); font-weight:normal; margin-left:4px;">(850)</span></div>
+                </div>
+              </div>
+              <p style="margin: 16px 0;">Distraction-free Markdown note taking. Instant search, encrypted local notebook backups, nested tags, and clean distraction-free writing.</p>
+              <div class="play-tags">
+                <span class="play-tag">Markdown</span>
+                <span class="play-tag">Local Vault</span>
+                <span class="play-tag">Lightning Fast</span>
+              </div>
+            </div>
+            <a class="play-btn" href="https://play.google.com/store/apps/dev?id=PixelCraftin+Studios" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+                <path d="M3.6 1.8A1.8 1.8 0 0 0 3 3.3v17.4a1.8 1.8 0 0 0 .6 1.5l.1.1 9.8-9.8v-.2L3.7 1.7l-.1.1z" fill="#00D3FF"/>
+                <path d="M16.7 15.6l-3.2-3.2v-.2l3.2-3.2.1.1 3.8 2.2c1.1.6 1.1 1.6 0 2.2l-3.9 2.1z" fill="#FFCE00"/>
+                <path d="M13.5 12.2L3.6 22.1c.4.4 1 .4 1.7.1l11.4-6.6-3.2-3.4z" fill="#FF3A44"/>
+                <path d="M13.5 11.8l3.2-3.4L5.3 1.8c-.7-.3-1.3-.3-1.7.1l9.9 9.9z" fill="#00E676"/>
+              </svg>
+              <div class="play-btn-text">
+                <span class="play-btn-sub">GET IT ON</span>
+                <span class="play-btn-title">Google Play</span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Cosmic Runner (Game) -->
+          <div class="play-card">
+            <div>
+              <div class="play-card-header">
+                <div class="play-app-icon" style="background: linear-gradient(135deg, #7048e8, #ae3ec9);">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                </div>
+                <div class="play-app-info">
+                  <h3>Cosmic Rush: Odyssey</h3>
+                  <div class="play-app-cat">Games • Arcade • Runner</div>
+                  <div class="play-rating">★ 4.9 <span style="color:var(--text-faint); font-weight:normal; margin-left:4px;">(New)</span></div>
+                </div>
+              </div>
+              <p style="margin: 16px 0;">Adrenaline-fueled retro-futuristic space arcade runner. Google Play Games integration, achievements, leaderboards, and ultra-smooth 120 FPS physics.</p>
+              <div class="play-tags">
+                <span class="play-tag">Play Games</span>
+                <span class="play-tag">Leaderboards</span>
+                <span class="play-tag">120 FPS</span>
+              </div>
+            </div>
+            <a class="play-btn" href="https://play.google.com/store/apps/dev?id=PixelCraftin+Studios" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+                <path d="M3.6 1.8A1.8 1.8 0 0 0 3 3.3v17.4a1.8 1.8 0 0 0 .6 1.5l.1.1 9.8-9.8v-.2L3.7 1.7l-.1.1z" fill="#00D3FF"/>
+                <path d="M16.7 15.6l-3.2-3.2v-.2l3.2-3.2.1.1 3.8 2.2c1.1.6 1.1 1.6 0 2.2l-3.9 2.1z" fill="#FFCE00"/>
+                <path d="M13.5 12.2L3.6 22.1c.4.4 1 .4 1.7.1l11.4-6.6-3.2-3.4z" fill="#FF3A44"/>
+                <path d="M13.5 11.8l3.2-3.4L5.3 1.8c-.7-.3-1.3-.3-1.7.1l9.9 9.9z" fill="#00E676"/>
+              </svg>
+              <div class="play-btn-text">
+                <span class="play-btn-sub">GET IT ON</span>
+                <span class="play-btn-title">Google Play</span>
+              </div>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Google Play Standards Banner -->
+        <div class="play-features">
+          <div class="play-feat-card">
+            <div class="play-feat-icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+            </div>
+            <div class="play-feat-info">
+              <h4>Play Protect Certified</h4>
+              <p>Every APK &amp; App Bundle is verified clean, malware-free, and tested against rigorous Android security standards.</p>
+            </div>
+          </div>
+
+          <div class="play-feat-card">
+            <div class="play-feat-icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <path d="m4.93 4.93 14.14 14.14" />
+              </svg>
+            </div>
+            <div class="play-feat-info">
+              <h4>Zero Invasive Tracking</h4>
+              <p>We respect your device. No telemetry hogging your battery, zero intrusive user tracking, and full privacy controls.</p>
+            </div>
+          </div>
+
+          <div class="play-feat-card">
+            <div class="play-feat-icon">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+              </svg>
+            </div>
+            <div class="play-feat-info">
+              <h4>Google Play Games Services</h4>
+              <p>Seamless cloud save synchronization, cross-device achievement unlocking, and real-time global leaderboards.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
   </main>
 
   <footer>
@@ -87,7 +338,7 @@
           <div class="footer-col">
             <span class="h">Studio</span>
             <a href="about.html">About Us</a>
-            <a href="store.html">Store</a>
+            <a href="store.html" class="active">Store</a>
             <a href="timeline.html">Timeline</a>
             <a href="contact.html">Contact</a>
           </div>

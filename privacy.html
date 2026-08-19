@@ -3,20 +3,26 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Privacy Policy — PixelCraftin Studio</title>
   <meta name="description"
     content="Privacy Policy for mobile applications and games published on Google Play Store by PixelCraftin Studio.">
-  <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96">
-  <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
-  <link rel="shortcut icon" href="favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+  <link rel="shortcut icon" href="favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="manifest" href="favicon/site.webmanifest">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="PixelCraftin">
+  <meta name="theme-color" content="#0a0a0c">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-  <canvas id="starfield"></canvas>
 
   <header class="site-header">
     <div class="capsule">
@@ -65,10 +71,25 @@
         <div class="doc-meta">
           <span class="doc-badge">Google Play Compliant</span>
           <span>•</span>
-          <span>Last Updated: August 16, 2026</span>
+          <span>Last Updated: August 19, 2026</span>
           <span>•</span>
           <span>Developer: PixelCraftin Studio</span>
         </div>
+      </div>
+
+      <!-- Quick Category Jump Pills for Mobile & Tablet -->
+      <div class="doc-quick-nav">
+        <a class="doc-quick-pill" href="#overview">01. Overview</a>
+        <a class="doc-quick-pill" href="#information-collected">02. Data Collected</a>
+        <a class="doc-quick-pill" href="#gameplay-data">03. Game Saves</a>
+        <a class="doc-quick-pill" href="#permissions">04. Permissions</a>
+        <a class="doc-quick-pill" href="#third-party-services">05. Third Parties</a>
+        <a class="doc-quick-pill" href="#in-app-purchases">06. In-App Purchases</a>
+        <a class="doc-quick-pill" href="#ads-analytics">07. Ads &amp; Analytics</a>
+        <a class="doc-quick-pill" href="#children-privacy">08. Children Privacy</a>
+        <a class="doc-quick-pill" href="#data-retention">09. Data Deletion</a>
+        <a class="doc-quick-pill" href="#your-rights">10. User Rights</a>
+        <a class="doc-quick-pill" href="#contact-us">11. Contact</a>
       </div>
 
       <div class="doc-layout">
@@ -87,7 +108,7 @@
             <a href="#children-privacy">8. Children's Privacy</a>
             <a href="#data-retention">9. Data Retention &amp; Deletion</a>
             <a href="#security">10. Security Measures</a>
-            <a href="#your-rights">11. Your Rights</a>
+            <a href="#your-rights">11. Your Privacy Rights</a>
             <a href="#contact-us">12. Contact Information</a>
           </nav>
         </aside>
@@ -123,22 +144,20 @@
               <li><strong>Customer Support Inquiries:</strong> If you contact us via email (e.g., at <a
                   href="mailto:pixelcraftinstudio@gmail.com"
                   style="color:var(--accent);">pixelcraftinstudio@gmail.com</a>) for bug reports, feedback, or refund
-                inquiries, we receive your email address and any message content you provide.</li>
+                inquiries, we receive your email address and message contents.</li>
               <li><strong>User Settings &amp; Preferences:</strong> In-app settings (such as sound toggle, theme
-                selection, or control schemes) are typically saved locally on your device.</li>
+                selection, or control schemes) are stored locally on your device storage.</li>
             </ul>
 
             <h3>B. Automatically Collected Technical Data</h3>
-            <p>When our applications and games run, standard technical diagnostics may be collected automatically by our
-              integrated libraries or Google Play:</p>
+            <p>When our applications and games run, standard technical diagnostics may be collected automatically by Google Play or integrated libraries:</p>
             <ul>
               <li>Device model, manufacturer, and screen resolution</li>
               <li>Operating system version (e.g., Android 12, 13, 14, 15)</li>
               <li>App version and build number</li>
-              <li>Crash logs, stack traces, and performance metrics (e.g., frame rate drops, memory usage)</li>
-              <li>IP address (used to infer broad non-precise geographic region such as country/city)</li>
-              <li>Google Advertising ID (AAID) — for ad-supported games/apps, subject to your Android advertising
-                preferences.</li>
+              <li>Crash logs, stack traces, and performance diagnostics</li>
+              <li>Coarse non-precise geographic region (country/city level via IP)</li>
+              <li>Google Advertising ID (AAID) — for ad-supported games, subject to your Android advertising preferences</li>
             </ul>
           </section>
 
@@ -147,11 +166,10 @@
             <p>For games developed by PixelCraftin Studio:</p>
             <ul>
               <li><strong>Local Game Saves:</strong> By default, your level progress, unlocked items, high scores, and
-                virtual inventory are stored locally on your device's private application storage.</li>
+                virtual inventory are stored securely on your device's private app storage.</li>
               <li><strong>Google Play Games Services:</strong> If a game supports Google Play Games Services, you may
                 choose to log in with your Google Play Games account to sync achievements, post scores to global
-                leaderboards, and enable cloud save backup across devices. Your Google Play Games profile ID is handled
-                under Google's Privacy Policy.</li>
+                leaderboards, and enable cloud save backup across devices.</li>
             </ul>
           </section>
 
@@ -171,79 +189,86 @@
                 <tbody>
                   <tr>
                     <td><code>INTERNET</code></td>
-                    <td>Required for fetching online levels, cloud saves, multiplayer/leaderboards, and crash reporting.
-                    </td>
+                    <td>Required for cloud saves, multiplayer, leaderboards, and crash reporting.</td>
                   </tr>
                   <tr>
                     <td><code>ACCESS_NETWORK_STATE</code></td>
-                    <td>Checks whether your device has an active Wi-Fi or cellular connection before network requests.
-                    </td>
+                    <td>Checks whether your device has an active Wi-Fi or mobile data connection.</td>
                   </tr>
                   <tr>
                     <td><code>com.android.vending.BILLING</code></td>
-                    <td>Enables optional in-app purchases (e.g. ad removal, premium features, virtual items) securely
-                      via Google Play.</td>
+                    <td>Enables optional in-app purchases (e.g. ad removal, premium features) via Google Play.</td>
                   </tr>
                   <tr>
                     <td><code>VIBRATE</code></td>
-                    <td>Provides tactile haptic feedback during gameplay actions or button presses.</td>
+                    <td>Provides tactile haptic feedback during gameplay actions or interactions.</td>
                   </tr>
                   <tr>
                     <td><code>POST_NOTIFICATIONS</code></td>
-                    <td>Optional: sends game reminders, energy refills, or important app updates (you can disable
-                      notifications anytime in system settings).</td>
+                    <td>Optional: sends game reminders or updates (can be toggled off anytime in Android settings).</td>
                   </tr>
                   <tr>
                     <td><code>WAKE_LOCK</code></td>
-                    <td>Prevents the screen from dimming during active gameplay sessions or PDF processing.</td>
+                    <td>Prevents the screen from dimming during active gameplay sessions.</td>
                   </tr>
                 </tbody>
               </table>
             </div>
             <p>You can review and revoke any granted permissions at any time via your device's <strong>Settings &gt;
-                Apps &gt; [App/Game Name] &gt; Permissions</strong>.</p>
+                Apps &gt; [App Name] &gt; Permissions</strong>.</p>
           </section>
 
           <section class="doc-section" id="third-party-services">
             <h2><span class="sec-num">05.</span> Third-Party Services &amp; SDKs</h2>
             <p>
-              To provide robust backend functionality, analytics, and monetization, our Google Play apps and games may
+              To provide robust backend functionality, analytics, and optional monetization, our Google Play apps and games may
               integrate trusted third-party SDKs that operate under their respective privacy policies:
             </p>
-            <ul>
-              <li>
-                <strong>Google Play Services:</strong> Core Android system integration, authentication, and security. <a
-                  href="https://policies.google.com/privacy" target="_blank" rel="noopener"
-                  style="color:var(--accent);">Google Privacy Policy</a>
-              </li>
-              <li>
-                <strong>Google Play Games Services:</strong> Achievements, cloud saves, and leaderboards. <a
-                  href="https://policies.google.com/privacy" target="_blank" rel="noopener"
-                  style="color:var(--accent);">Google Games Privacy</a>
-              </li>
-              <li>
-                <strong>Google AdMob (Google Mobile Ads):</strong> Displays banner, interstitial, or rewarded video
-                advertisements in free versions. <a href="https://policies.google.com/technologies/ads" target="_blank"
-                  rel="noopener" style="color:var(--accent);">AdMob Privacy &amp; Terms</a>
-              </li>
-              <li>
-                <strong>Firebase (Crashlytics &amp; Analytics):</strong> Anonymized crash reporting and aggregate app
-                performance analytics. <a href="https://firebase.google.com/support/privacy" target="_blank"
-                  rel="noopener" style="color:var(--accent);">Firebase Privacy Policy</a>
-              </li>
-            </ul>
+
+            <div class="sdk-grid">
+              <div class="sdk-card">
+                <div>
+                  <h4>Google Play Services</h4>
+                  <p>Core Android system integration, authentication, and security.</p>
+                </div>
+                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy →</a>
+              </div>
+
+              <div class="sdk-card">
+                <div>
+                  <h4>Google Play Games</h4>
+                  <p>Achievements, leaderboards, and cloud save synchronization.</p>
+                </div>
+                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Games Privacy →</a>
+              </div>
+
+              <div class="sdk-card">
+                <div>
+                  <h4>Google AdMob</h4>
+                  <p>Displays banner or interstitial advertisements in free editions.</p>
+                </div>
+                <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">AdMob Terms →</a>
+              </div>
+
+              <div class="sdk-card">
+                <div>
+                  <h4>Firebase Analytics</h4>
+                  <p>Anonymized crash diagnostics and stability metrics.</p>
+                </div>
+                <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Policy →</a>
+              </div>
+            </div>
           </section>
 
           <section class="doc-section" id="in-app-purchases">
             <h2><span class="sec-num">06.</span> In-App Purchases &amp; Billing</h2>
             <p>
-              Certain apps or games may offer digital products, subscriptions, or virtual consumable items (e.g. ad
-              removal, extra themes, game currency).
+              Certain apps or games may offer digital products or subscriptions (e.g. ad removal, extra themes, or pro tools).
             </p>
             <p>
               All financial transactions are processed entirely through the <strong>Google Play In-App Billing
                 System</strong>. PixelCraftin Studio <strong>never</strong> collects, processes, or stores your credit
-              card number, bank details, or billing address. All purchase records are tied to your Google Play account.
+              card numbers, banking details, or billing addresses.
             </p>
           </section>
 
@@ -254,83 +279,58 @@
               development.
             </p>
             <ul>
-              <li><strong>Personalized Ads:</strong> Depending on your consent and location, ad networks may use the
-                Google Advertising ID to show relevant ads.</li>
               <li><strong>Non-Personalized Ads:</strong> You can opt out of personalized ads at any time on your Android
-                device by visiting <strong>Settings &gt; Google &gt; Ads &gt; Reset or Delete advertising ID</strong>.
+                device by visiting <strong>Settings &gt; Google &gt; Ads &gt; Delete advertising ID</strong>.
               </li>
-              <li><strong>No Ads Options:</strong> Most of our titles offer a one-time purchase or premium edition that
-                completely removes all third-party advertisements.</li>
+              <li><strong>Ad-Free Option:</strong> Most of our titles offer a simple one-time purchase that
+                permanently removes all third-party advertisements.</li>
             </ul>
           </section>
 
           <section class="doc-section" id="children-privacy">
-            <h2><span class="sec-num">08.</span> Children's Privacy (COPPA / GDPR-K / Families Policy)</h2>
+            <h2><span class="sec-num">08.</span> Children's Privacy (COPPA &amp; Families Policy)</h2>
             <p>
               PixelCraftin Studio complies with the Children's Online Privacy Protection Act (COPPA), GDPR-K, and Google
               Play Families Policies.
             </p>
             <ul>
-              <li>Unless explicitly categorized in the Google Play "Designed for Families" program, our general apps and
-                games are intended for general audiences (ages 13 and older).</li>
-              <li>For any titles targeting children or mixed audiences, we strictly disable interest-based behavioral
-                advertising, do not collect personal identifiers from children without verified parental consent, and
-                only use certified family-friendly ad SDKs.</li>
-              <li>If a parent or guardian becomes aware that a child under 13 has provided us with personal information,
-                please contact us at <a href="mailto:pixelcraftinstudio@gmail.com"
-                  style="color:var(--accent);">pixelcraftinstudio@gmail.com</a>, and we will promptly delete such
-                information.</li>
+              <li>Unless explicitly marked in the Google Play "Designed for Families" program, our apps and games are intended for general audiences (ages 13 and older).</li>
+              <li>For any titles targeting children, we disable behavioral advertising, do not collect personal identifiers, and only use certified family-safe ad networks.</li>
+              <li>If you believe a child under 13 has provided us with personal information, please contact us at <a href="mailto:pixelcraftinstudio@gmail.com" style="color:var(--accent);">pixelcraftinstudio@gmail.com</a> for immediate deletion.</li>
             </ul>
           </section>
 
           <section class="doc-section" id="data-retention">
-            <h2><span class="sec-num">09.</span> Data Retention &amp; User Data Deletion Requests</h2>
+            <h2><span class="sec-num">09.</span> Data Retention &amp; Deletion Requests</h2>
             <p>
-              We retain personal information (such as email support correspondence) only for as long as necessary to
-              resolve user requests and fulfill the purposes outlined in this policy.
+              We retain minimal support correspondence only as long as needed to fulfill your request.
             </p>
-            <div class="doc-callout">
-              <p><strong>How to Request Data Deletion:</strong> In compliance with Google Play Developer Policies, you
-                may request the permanent deletion of any data associated with your use of our apps or games by emailing
-                us at <a href="mailto:pixelcraftinstudio@gmail.com"
-                  style="color:var(--accent);">pixelcraftinstudio@gmail.com</a> with the subject line <em>"Data Deletion
-                  Request"</em> and specifying the app/game name. We will fulfill verified requests within 30 days.</p>
+
+            <div class="deletion-box">
+              <h3>Request Data Deletion</h3>
+              <p>In accordance with Google Play Developer Policies, you may request the permanent deletion of any data associated with your use of our apps or games at any time.</p>
+              <a class="deletion-btn" href="mailto:pixelcraftinstudio@gmail.com?subject=Data%20Deletion%20Request">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                Request Data Deletion via Email
+              </a>
             </div>
           </section>
 
           <section class="doc-section" id="security">
             <h2><span class="sec-num">10.</span> Security of Your Data</h2>
             <p>
-              The security of your information is paramount to us. We implement industry-standard encryption protocols
-              (HTTPS/TLS) for data in transit and adhere to secure Android application development practices. While no
-              method of electronic transmission over the Internet is 100% secure, we continuously update our software to
-              protect against unauthorized access.
+              We implement industry-standard encryption protocols (HTTPS/TLS) for data in transit and adhere to secure Android application development guidelines to protect your data against unauthorized access.
             </p>
           </section>
 
           <section class="doc-section" id="your-rights">
             <h2><span class="sec-num">11.</span> Your Privacy Rights (GDPR / CCPA / DPDP)</h2>
-            <p>Depending on your geographic jurisdiction, you hold specific privacy rights, including:</p>
-            <ul>
-              <li><strong>Right to Access:</strong> You can request confirmation of whether we process any personal data
-                concerning you.</li>
-              <li><strong>Right to Rectification:</strong> You can request corrections to inaccurate personal data.</li>
-              <li><strong>Right to Erasure / Deletion:</strong> You have the right to request deletion of your personal
-                data.</li>
-              <li><strong>Right to Restrict or Object to Processing:</strong> You can limit how we use your data or opt
-                out of analytics.</li>
-            </ul>
-            <p>To exercise any of these rights, please email us directly.</p>
+            <p>Depending on your jurisdiction, you hold rights to access, rectify, restrict, or delete your personal data. To exercise any of these rights, please email us directly.</p>
           </section>
 
           <section class="doc-section" id="contact-us">
-            <h2><span class="sec-num">12.</span> Changes &amp; Contact Information</h2>
-            <p>
-              We may update our Privacy Policy periodically to reflect new features, app releases, or evolving
-              regulatory and Google Play policies. Any changes will be posted on this page with an updated "Last
-              Updated" timestamp.
-            </p>
-            <div class="doc-callout" style="margin-top: 24px;">
+            <h2><span class="sec-num">12.</span> Developer &amp; Contact Information</h2>
+            <div class="doc-callout" style="margin-top: 18px;">
               <p><strong>PixelCraftin Studio</strong><br>
                 Developer Support: <a href="mailto:pixelcraftinstudio@gmail.com"
                   style="color:var(--accent);">pixelcraftinstudio@gmail.com</a><br>
@@ -370,7 +370,7 @@
           </div>
           <div class="footer-col">
             <span class="h">Legal</span>
-            <a href="privacy.html">Privacy Policy</a>
+            <a href="privacy.html" class="active">Privacy Policy</a>
             <a href="terms.html">Terms &amp; Conditions</a>
           </div>
           <div class="footer-col">
@@ -399,7 +399,7 @@
         <div class="footer-bottom-links">
           <a href="about.html">About Us</a>
           <span class="sep">•</span>
-          <a href="privacy.html">Privacy Policy</a>
+          <a href="privacy.html" class="active">Privacy Policy</a>
           <span class="sep">•</span>
           <a href="terms.html">Terms &amp; Conditions</a>
         </div>
