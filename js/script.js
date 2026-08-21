@@ -38,7 +38,7 @@
       popup.innerHTML = `
         <div class="robo-popup-header">
           <div class="robo-popup-title">
-            <img src="ROBO.webp" alt="Robo" class="robo-popup-avatar">
+            <img src="ROBO.webp" alt="Robo" class="robo-popup-avatar" width="32" height="32" style="width:32px;height:32px;object-fit:cover;border-radius:50%;">
             <div>
               <h4>Robo</h4>
               <span>Online • Studio Bot</span>

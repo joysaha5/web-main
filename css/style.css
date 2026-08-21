@@ -250,6 +250,10 @@ html[data-theme="light"] .capsule {
 .robo-btn {
   width: 42px;
   height: 42px;
+  min-width: 42px;
+  min-height: 42px;
+  max-width: 42px;
+  max-height: 42px;
   border-radius: 50%;
   border: 1px solid var(--border);
   background: var(--bg-raised);
@@ -258,6 +262,7 @@ html[data-theme="light"] .capsule {
   justify-content: center;
   cursor: pointer;
   padding: 0;
+  overflow: hidden;
   transition: transform .3s var(--ease), border-color .2s, box-shadow .25s, background .2s;
   flex-shrink: 0;
   position: relative;
@@ -268,11 +273,16 @@ html[data-theme="light"] .capsule {
   box-shadow: 0 0 12px rgba(92, 124, 250, 0.45);
 }
 
-.robo-btn .robo-icon {
-  width: 26px;
-  height: 26px;
-  object-fit: contain;
+.robo-btn .robo-icon,
+img.robo-icon {
+  width: 26px !important;
+  height: 26px !important;
+  max-width: 26px !important;
+  max-height: 26px !important;
+  border-radius: 50%;
+  object-fit: cover;
   display: block;
+  margin: 0 auto;
   transition: transform .35s cubic-bezier(0.34, 1.56, 0.64, 1);
   pointer-events: none;
 }
@@ -343,13 +353,16 @@ html[data-theme="light"] .capsule {
 }
 
 .robo-popup-avatar {
-  width: 32px;
-  height: 32px;
+  width: 32px !important;
+  height: 32px !important;
+  max-width: 32px !important;
+  max-height: 32px !important;
   border-radius: 50%;
   background: color-mix(in srgb, var(--accent) 18%, transparent);
   border: 1px solid var(--accent);
   padding: 2px;
-  object-fit: contain;
+  object-fit: cover;
+  display: block;
 }
 
 .robo-popup-title h4 {
