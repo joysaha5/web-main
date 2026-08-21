@@ -248,39 +248,40 @@ html[data-theme="light"] .capsule {
 
 /* ---------- Robo Icon Button & Popup ---------- */
 .robo-btn {
-  width: 42px;
-  height: 42px;
-  min-width: 42px;
-  min-height: 42px;
-  max-width: 42px;
-  max-height: 42px;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  max-width: 40px;
+  max-height: 40px;
   border-radius: 50%;
-  border: 1px solid var(--border);
-  background: var(--bg-raised);
+  border: 1.5px solid var(--border);
+  background: #6a6a72;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   padding: 0;
   overflow: hidden;
-  transition: transform .3s var(--ease), border-color .2s, box-shadow .25s, background .2s;
+  transition: transform .25s var(--ease), border-color .2s, box-shadow .25s;
   flex-shrink: 0;
   position: relative;
 }
 
 .robo-btn:hover {
   border-color: var(--accent);
-  box-shadow: 0 0 12px rgba(92, 124, 250, 0.45);
+  box-shadow: 0 0 14px rgba(92, 124, 250, 0.5);
+  transform: scale(1.05);
 }
 
 .robo-btn .robo-icon,
 img.robo-icon {
-  width: 26px !important;
-  height: 26px !important;
-  max-width: 26px !important;
-  max-height: 26px !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
   border-radius: 50%;
-  object-fit: cover;
+  object-fit: cover !important;
   display: block;
   margin: 0 auto;
   transition: transform .35s cubic-bezier(0.34, 1.56, 0.64, 1);
