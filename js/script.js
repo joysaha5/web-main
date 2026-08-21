@@ -19,6 +19,110 @@
     btn.addEventListener("click", toggleTheme);
   });
 
+  /* ---------- Robo Popup & 45deg Rotation ---------- */
+  function initRoboPopup() {
+    var roboBtn = document.querySelector("[data-robo-toggle]");
+    if (!roboBtn) return;
+
+    var overlay = document.querySelector("[data-robo-overlay]");
+    var popup = document.querySelector("[data-robo-popup]");
+
+    if (!popup) {
+      overlay = document.createElement("div");
+      overlay.className = "robo-popup-overlay";
+      overlay.setAttribute("data-robo-overlay", "");
+
+      popup = document.createElement("div");
+      popup.className = "robo-popup";
+      popup.setAttribute("data-robo-popup", "");
+      popup.innerHTML = `
+        <div class="robo-popup-header">
+          <div class="robo-popup-title">
+            <img src="ROBO.webp" alt="Robo" class="robo-popup-avatar">
+            <div>
+              <h4>Robo</h4>
+              <span>Online • Studio Bot</span>
+            </div>
+          </div>
+          <button class="robo-close-btn" data-robo-close aria-label="Close popup">&times;</button>
+        </div>
+        <div class="robo-popup-body">
+          <div class="robo-msg-bubble">
+            👋 <strong>Hi! I'm Robo.</strong> Welcome to PixelCraftin Studio! Explore our Google Play games, minimal utility apps, or get in touch with our team.
+          </div>
+          <div class="robo-actions-grid">
+            <a href="apps.html" class="robo-action-link">
+              <span>📱 All Apps &amp; Tools</span>
+              <span style="color:var(--accent); font-weight:bold;">→</span>
+            </a>
+            <a href="https://github.com/pixelcraftin" target="_blank" rel="noopener" class="robo-action-link">
+              <span>💻 GitHub Source</span>
+              <span style="color:var(--accent); font-weight:bold;">→</span>
+            </a>
+            <a href="contact.html" class="robo-action-link">
+              <span>✉️ Contact Developer</span>
+              <span style="color:var(--accent); font-weight:bold;">→</span>
+            </a>
+            <a href="privacy.html" class="robo-action-link">
+              <span>🔒 Privacy Policy</span>
+              <span style="color:var(--accent); font-weight:bold;">→</span>
+            </a>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(overlay);
+      document.body.appendChild(popup);
+    }
+
+    function toggleRobo(state) {
+      var isOpen = typeof state === "boolean" ? state : !popup.classList.contains("is-open");
+      roboBtn.classList.toggle("is-active", isOpen);
+      roboBtn.setAttribute("aria-expanded", isOpen);
+      overlay.classList.toggle("is-open", isOpen);
+      popup.classList.toggle("is-open", isOpen);
+    }
+
+    roboBtn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      toggleRobo();
+    });
+
+    var closeBtn = popup.querySelector("[data-robo-close]");
+    if (closeBtn) {
+      closeBtn.addEventListener("click", function () {
+        toggleRobo(false);
+      });
+    }
+
+    overlay.addEventListener("click", function () {
+      toggleRobo(false);
+    });
+
+    popup.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        toggleRobo(false);
+      });
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && popup.classList.contains("is-open")) {
+        toggleRobo(false);
+      }
+    });
+
+    document.addEventListener("click", function (e) {
+      if (popup.classList.contains("is-open") && !popup.contains(e.target) && !roboBtn.contains(e.target)) {
+        toggleRobo(false);
+      }
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initRoboPopup);
+  } else {
+    initRoboPopup();
+  }
+
   /* ---------- Mobile nav ---------- */
   var menuBtn = document.querySelector("[data-menu-toggle]");
   var panel = document.querySelector("[data-mobile-panel]");
@@ -189,6 +293,24 @@
     });
   }
 
+  /* ---------- Google Analytics (GA4) ---------- */
+  var GA_ID = window.GA_MEASUREMENT_ID || "G-XXXXXXXXXX";
+  if (GA_ID && GA_ID !== "G-XXXXXXXXXX" && !window.gtag) {
+    var gaScript = document.createElement("script");
+    gaScript.async = true;
+    gaScript.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(GA_ID);
+    document.head.appendChild(gaScript);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { window.dataLayer.push(arguments); }
+    window.gtag = gtag;
+    gtag("js", new Date());
+    gtag("config", GA_ID, {
+      anonymize_ip: true,
+      send_page_view: true
+    });
+  }
+
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", updateActiveNav);
   } else {
@@ -196,3 +318,4 @@
   }
   window.addEventListener("popstate", updateActiveNav);
 })();
+

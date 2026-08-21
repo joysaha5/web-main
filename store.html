@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Google Play Store — PixelCraftin Studio</title>
+  <title>App Directory &amp; Store — PixelCraftin Studio</title>
   <meta name="description"
-    content="Download official Android apps and games published by PixelCraftin Studio on the Google Play Store. Calc+, PdfEditor, Noting Notes, and games.">
+    content="Explore open-source, privacy-first Android apps and games published by PixelCraftin Studio. Calc+, PdfEditor, Quik Note, and more. Zero ads, zero tracking.">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="48x48" href="favicon/favicon-48x48.png">
@@ -29,12 +29,15 @@
     <div class="capsule">
       <a href="index.html" class="brand">PixelCraftin <span>studio</span></a>
       <nav class="nav-links" data-nav>
-        <a href="apps.html">Apps</a>
-        <a href="store.html" class="active">Store</a>
-        <a href="timeline.html">Timeline</a>
+        <a href="apps.html" class="active">Apps</a>
         <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+        <a href="https://github.com/pixelcraftin" target="_blank" rel="noopener">GitHub</a>
       </nav>
       <div class="header-actions">
+        <button class="robo-btn" data-robo-toggle aria-label="Open Robo">
+          <img src="ROBO.webp" alt="Robo" class="robo-icon">
+        </button>
         <button class="theme-toggle" data-theme-toggle aria-label="Toggle color theme">
           <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
             <path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z" />
@@ -52,30 +55,32 @@
     </div>
   </header>
   <nav class="mobile-panel" data-mobile-panel data-nav>
-    <a href="apps.html">Apps</a>
-    <a href="store.html" class="active">Store</a>
-    <a href="timeline.html">Timeline</a>
+    <a href="apps.html" class="active">Apps</a>
     <a href="contact.html">Contact</a>
+    <a href="about.html">About</a>
+    <a href="https://github.com/pixelcraftin" target="_blank" rel="noopener">GitHub</a>
   </nav>
 
   <main class="page">
 
-    <!-- Store Hero -->
+    <!-- Store & App Directory Hero -->
     <section class="store-hero">
       <div class="wrap">
         <div class="eyebrow rule" style="display:inline-flex; align-items:center; gap:8px;">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none">
-            <path d="M3.6 1.8A1.8 1.8 0 0 0 3 3.3v17.4a1.8 1.8 0 0 0 .6 1.5l.1.1 9.8-9.8v-.2L3.7 1.7l-.1.1z" fill="#00D3FF"/>
-            <path d="M16.7 15.6l-3.2-3.2v-.2l3.2-3.2.1.1 3.8 2.2c1.1.6 1.1 1.6 0 2.2l-3.9 2.1z" fill="#FFCE00"/>
-            <path d="M13.5 12.2L3.6 22.1c.4.4 1 .4 1.7.1l11.4-6.6-3.2-3.4z" fill="#FF3A44"/>
-            <path d="M13.5 11.8l3.2-3.4L5.3 1.8c-.7-.3-1.3-.3-1.7.1l9.9 9.9z" fill="#00E676"/>
+            <path d="M3.6 1.8A1.8 1.8 0 0 0 3 3.3v17.4a1.8 1.8 0 0 0 .6 1.5l.1.1 9.8-9.8v-.2L3.7 1.7l-.1.1z"
+              fill="#00D3FF" />
+            <path d="M16.7 15.6l-3.2-3.2v-.2l3.2-3.2.1.1 3.8 2.2c1.1.6 1.1 1.6 0 2.2l-3.9 2.1z" fill="#FFCE00" />
+            <path d="M13.5 12.2L3.6 22.1c.4.4 1 .4 1.7.1l11.4-6.6-3.2-3.4z" fill="#FF3A44" />
+            <path d="M13.5 11.8l3.2-3.4L5.3 1.8c-.7-.3-1.3-.3-1.7.1l9.9 9.9z" fill="#00E676" />
           </svg>
-          Google Play Store Developer Showcase
+          Official App Catalog &amp; Store
         </div>
-        <h1 style="margin-top:20px;">Google Play <em>Apps &amp; Games</em></h1>
-        <p>Explore our official catalog of high-performance tools, creative productivity apps, and immersive games built exclusively for Android and published on the Google Play Store.</p>
+        <h1 style="margin-top:20px;">PixelCraftin <em>Apps &amp; Games</em></h1>
+        <p>A directory of clean, privacy-respecting Android tools, calculators, file managers, and games. Built with
+          modern Material design, zero telemetry, and zero ads.</p>
 
-        <!-- Google Play Developer Profile Card -->
+        <!-- Developer Card Banner -->
         <div class="play-dev-card">
           <div class="play-dev-info">
             <div class="play-dev-avatar">P</div>
@@ -86,41 +91,68 @@
                 <span>•</span>
                 <span>Zero Bloat</span>
                 <span>•</span>
-                <span>Google Play Protect Verified</span>
+                <span>Open Source on GitHub</span>
+                <span>•</span>
+                <span>Google Play Protect</span>
               </div>
             </div>
           </div>
-          <a class="play-btn" href="https://play.google.com/store/apps/dev?id=PixelCraftin+Studios" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
-              <path d="M3.6 1.8A1.8 1.8 0 0 0 3 3.3v17.4a1.8 1.8 0 0 0 .6 1.5l.1.1 9.8-9.8v-.2L3.7 1.7l-.1.1z" fill="#00D3FF"/>
-              <path d="M16.7 15.6l-3.2-3.2v-.2l3.2-3.2.1.1 3.8 2.2c1.1.6 1.1 1.6 0 2.2l-3.9 2.1z" fill="#FFCE00"/>
-              <path d="M13.5 12.2L3.6 22.1c.4.4 1 .4 1.7.1l11.4-6.6-3.2-3.4z" fill="#FF3A44"/>
-              <path d="M13.5 11.8l3.2-3.4L5.3 1.8c-.7-.3-1.3-.3-1.7.1l9.9 9.9z" fill="#00E676"/>
-            </svg>
-            <div class="play-btn-text">
-              <span class="play-btn-sub">Open Developer Page</span>
-              <span class="play-btn-title">Google Play</span>
-            </div>
-          </a>
+          <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+            <a class="play-btn" href="https://play.google.com/store/apps/dev?id=PixelCraftin+Studios" target="_blank"
+              rel="noopener">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+                <path d="M3.6 1.8A1.8 1.8 0 0 0 3 3.3v17.4a1.8 1.8 0 0 0 .6 1.5l.1.1 9.8-9.8v-.2L3.7 1.7l-.1.1z"
+                  fill="#00D3FF" />
+                <path d="M16.7 15.6l-3.2-3.2v-.2l3.2-3.2.1.1 3.8 2.2c1.1.6 1.1 1.6 0 2.2l-3.9 2.1z" fill="#FFCE00" />
+                <path d="M13.5 12.2L3.6 22.1c.4.4 1 .4 1.7.1l11.4-6.6-3.2-3.4z" fill="#FF3A44" />
+                <path d="M13.5 11.8l3.2-3.4L5.3 1.8c-.7-.3-1.3-.3-1.7.1l9.9 9.9z" fill="#00E676" />
+              </svg>
+              <div class="play-btn-text">
+                <span class="play-btn-sub">Open Developer Page</span>
+                <span class="play-btn-title">Google Play</span>
+              </div>
+            </a>
+            <a class="app-action-btn" href="https://github.com/pixelcraftin" target="_blank" rel="noopener"
+              style="padding:12px 18px; font-size:.82rem;">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                <path
+                  d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 14.42 22 12A10 10 0 0 0 12 2z" />
+              </svg>
+              GitHub Source
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- App & Game Releases Grid -->
+    <!-- App Directory Section with -->
     <section style="padding: 20px 0 60px;">
       <div class="wrap">
-        
-        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; margin-bottom: 24px;">
+
+        <!-- Filter Tabs -->
+        <div
+          style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; margin-bottom: 24px;">
           <div>
-            <h2 style="font-family:var(--font-display); font-size:clamp(1.8rem, 3.2vw, 2.5rem); margin:0;">Featured Titles</h2>
-            <p style="color:var(--text-muted); font-size:.92rem; margin:6px 0 0;">Native Android architecture, Material Design 3, zero ads, and instant performance.</p>
+            <h2 style="font-family:var(--font-display); font-size:clamp(1.8rem, 3.2vw, 2.5rem); margin:0;">All
+              Applications</h2>
+            <p style="color:var(--text-muted); font-size:.92rem; margin:6px 0 0;">Find apps by task, install directly,
+              or view source code on GitHub.</p>
           </div>
         </div>
 
+        <div class="filter-bar">
+          <button class="filter-btn active" data-category="all">All Apps (6)</button>
+          <button class="filter-btn" data-category="tools">Tools &amp; Utilities</button>
+          <button class="filter-btn" data-category="productivity">Productivity</button>
+          <button class="filter-btn" data-category="customization">Customization</button>
+          <button class="filter-btn" data-category="games">Games</button>
+        </div>
+
+        <!-- Apps Grid -->
         <div class="play-grid">
 
-          <!-- Calc+ -->
-          <div class="play-card">
+          <!-- 1. Calc+ -->
+          <div class="play-card" data-app-card data-categories="tools productivity">
             <div>
               <div class="play-card-header">
                 <div class="play-app-icon" style="background: linear-gradient(135deg, #4f46e5, #5c7cfa);">
@@ -137,35 +169,43 @@
                 <div class="play-app-info">
                   <h3>Calc+</h3>
                   <div class="play-app-cat">Tools • Productivity</div>
-                  <div class="play-rating">★ 4.9 <span style="color:var(--text-faint); font-weight:normal; margin-left:4px;">(1.2K)</span></div>
+                  <div class="play-rating">★ 4.9 <span
+                      style="color:var(--text-faint); font-weight:normal; margin-left:4px;">(1.2K)</span></div>
                 </div>
               </div>
-              <p style="margin: 16px 0;">A fun, minimal calculator engineered with tactile haptics, smooth history recall, dynamic themes, and zero tracking permissions.</p>
+              <p style="margin: 16px 0;">Nothing OS inspired minimal calculator engineered with tactile haptics, instant
+                calculation tape, unit conversion, and zero ads.</p>
               <div class="play-tags">
                 <span class="play-tag">No Ads</span>
                 <span class="play-tag">Offline Ready</span>
-                <span class="play-tag">Dark / Light</span>
+                <span class="play-tag">Haptic Engine</span>
+                <span class="play-tag">Zero Tracking</span>
               </div>
             </div>
-            <a class="play-btn" href="https://play.google.com/store/apps/dev?id=PixelCraftin+Studios" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
-                <path d="M3.6 1.8A1.8 1.8 0 0 0 3 3.3v17.4a1.8 1.8 0 0 0 .6 1.5l.1.1 9.8-9.8v-.2L3.7 1.7l-.1.1z" fill="#00D3FF"/>
-                <path d="M16.7 15.6l-3.2-3.2v-.2l3.2-3.2.1.1 3.8 2.2c1.1.6 1.1 1.6 0 2.2l-3.9 2.1z" fill="#FFCE00"/>
-                <path d="M13.5 12.2L3.6 22.1c.4.4 1 .4 1.7.1l11.4-6.6-3.2-3.4z" fill="#FF3A44"/>
-                <path d="M13.5 11.8l3.2-3.4L5.3 1.8c-.7-.3-1.3-.3-1.7.1l9.9 9.9z" fill="#00E676"/>
-              </svg>
-              <div class="play-btn-text">
-                <span class="play-btn-sub">GET IT ON</span>
-                <span class="play-btn-title">Google Play</span>
-              </div>
-            </a>
+            <div class="app-card-actions">
+              <a class="app-action-btn primary" href="https://play.google.com/store/apps/dev?id=PixelCraftin+Studios"
+                target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+                Get on Play
+              </a>
+              <a class="app-action-btn" href="https://github.com/pixelcraftin" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 14.42 22 12A10 10 0 0 0 12 2z" />
+                </svg>
+                GitHub
+              </a>
+              <a class="app-action-btn" href="apps.html#n-calc">Details</a>
+            </div>
           </div>
 
-          <!-- PdfEditor Pro -->
-          <div class="play-card">
+          <!-- 2. PdfEditor+ -->
+          <div class="play-card" data-app-card data-categories="productivity tools">
             <div>
               <div class="play-card-header">
-                <div class="play-app-icon" style="background: linear-gradient(135deg, #e03131, #f76707);">
+                <div class="play-app-icon" style="background: linear-gradient(135deg, #e11d48, #f43f5e);">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
                     <polyline points="14 2 14 8 20 8" />
@@ -175,148 +215,143 @@
                   </svg>
                 </div>
                 <div class="play-app-info">
-                  <h3>PdfEditor Pro</h3>
-                  <div class="play-app-cat">Productivity • Business</div>
-                  <div class="play-rating">★ 4.8 <span style="color:var(--text-faint); font-weight:normal; margin-left:4px;">(3.4K)</span></div>
+                  <h3>PdfEditor</h3>
+                  <div class="play-app-cat">Productivity • Document</div>
+                  <div class="play-rating">★ 4.8 <span
+                      style="color:var(--text-faint); font-weight:normal; margin-left:4px;">(850)</span></div>
                 </div>
               </div>
-              <p style="margin: 16px 0;">All-in-one on-device PDF engine. Split, merge, compress, reorder pages, and sign documents securely without uploading files to the cloud.</p>
+              <p style="margin: 16px 0;">Lightweight, zero-tracker PDF toolkit for merging, annotating, splitting,
+                reordering, and signing PDF documents offline on-device.</p>
               <div class="play-tags">
-                <span class="play-tag">100% Private</span>
-                <span class="play-tag">Zero Cloud Upload</span>
-                <span class="play-tag">Fast Export</span>
+                <span class="play-tag">No Watermark</span>
+                <span class="play-tag">Zero Trackers</span>
+                <span class="play-tag">Offline First</span>
+                <span class="play-tag">Fast Render</span>
               </div>
             </div>
-            <a class="play-btn" href="https://play.google.com/store/apps/dev?id=PixelCraftin+Studios" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
-                <path d="M3.6 1.8A1.8 1.8 0 0 0 3 3.3v17.4a1.8 1.8 0 0 0 .6 1.5l.1.1 9.8-9.8v-.2L3.7 1.7l-.1.1z" fill="#00D3FF"/>
-                <path d="M16.7 15.6l-3.2-3.2v-.2l3.2-3.2.1.1 3.8 2.2c1.1.6 1.1 1.6 0 2.2l-3.9 2.1z" fill="#FFCE00"/>
-                <path d="M13.5 12.2L3.6 22.1c.4.4 1 .4 1.7.1l11.4-6.6-3.2-3.4z" fill="#FF3A44"/>
-                <path d="M13.5 11.8l3.2-3.4L5.3 1.8c-.7-.3-1.3-.3-1.7.1l9.9 9.9z" fill="#00E676"/>
-              </svg>
-              <div class="play-btn-text">
-                <span class="play-btn-sub">GET IT ON</span>
-                <span class="play-btn-title">Google Play</span>
-              </div>
-            </a>
+            <div class="app-card-actions">
+              <a class="app-action-btn primary" href="https://play.google.com/store/apps/dev?id=PixelCraftin+Studios"
+                target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+                Get on Play
+              </a>
+              <a class="app-action-btn" href="https://github.com/pixelcraftin" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 14.42 22 12A10 10 0 0 0 12 2z" />
+                </svg>
+                GitHub
+              </a>
+              <a class="app-action-btn" href="apps.html#n-dial">Details</a>
+            </div>
           </div>
 
-          <!-- Noting Notes -->
-          <div class="play-card">
+
+
+          <!-- 3. Quik Note -->
+          <div class="play-card" data-app-card data-categories="productivity">
             <div>
               <div class="play-card-header">
-                <div class="play-app-icon" style="background: linear-gradient(135deg, #099268, #20c997);">
+                <div class="play-app-icon" style="background: linear-gradient(135deg, #d97706, #f59e0b);">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 20h9" />
-                    <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
                   </svg>
                 </div>
                 <div class="play-app-info">
-                  <h3>Noting Notes</h3>
-                  <div class="play-app-cat">Tools • Notes &amp; Writing</div>
-                  <div class="play-rating">★ 4.7 <span style="color:var(--text-faint); font-weight:normal; margin-left:4px;">(850)</span></div>
+                  <h3>Quik Note</h3>
+                  <div class="play-app-cat">Productivity • Writing</div>
+                  <div class="play-rating">★ 4.8 <span
+                      style="color:var(--text-faint); font-weight:normal; margin-left:4px;">(640)</span></div>
                 </div>
               </div>
-              <p style="margin: 16px 0;">Distraction-free Markdown note taking. Instant search, encrypted local notebook backups, nested tags, and clean distraction-free writing.</p>
+              <p style="margin: 16px 0;">Distraction-free markdown notebook and checklist planner with on-device AES
+                encryption, tag filtering, and instant search.</p>
               <div class="play-tags">
                 <span class="play-tag">Markdown</span>
-                <span class="play-tag">Local Vault</span>
-                <span class="play-tag">Lightning Fast</span>
+                <span class="play-tag">AES Encrypted</span>
+                <span class="play-tag">Instant Search</span>
+                <span class="play-tag">JSON / MD Export</span>
               </div>
             </div>
-            <a class="play-btn" href="https://play.google.com/store/apps/dev?id=PixelCraftin+Studios" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
-                <path d="M3.6 1.8A1.8 1.8 0 0 0 3 3.3v17.4a1.8 1.8 0 0 0 .6 1.5l.1.1 9.8-9.8v-.2L3.7 1.7l-.1.1z" fill="#00D3FF"/>
-                <path d="M16.7 15.6l-3.2-3.2v-.2l3.2-3.2.1.1 3.8 2.2c1.1.6 1.1 1.6 0 2.2l-3.9 2.1z" fill="#FFCE00"/>
-                <path d="M13.5 12.2L3.6 22.1c.4.4 1 .4 1.7.1l11.4-6.6-3.2-3.4z" fill="#FF3A44"/>
-                <path d="M13.5 11.8l3.2-3.4L5.3 1.8c-.7-.3-1.3-.3-1.7.1l9.9 9.9z" fill="#00E676"/>
-              </svg>
-              <div class="play-btn-text">
-                <span class="play-btn-sub">GET IT ON</span>
-                <span class="play-btn-title">Google Play</span>
-              </div>
-            </a>
+            <div class="app-card-actions">
+              <a class="app-action-btn primary" href="https://play.google.com/store/apps/dev?id=PixelCraftin+Studios"
+                target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+                Get on Play
+              </a>
+              <a class="app-action-btn" href="https://github.com/pixelcraftin" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 14.42 22 12A10 10 0 0 0 12 2z" />
+                </svg>
+                GitHub
+              </a>
+              <a class="app-action-btn" href="apps.html#noting-notes">Details</a>
+            </div>
           </div>
 
-          <!-- Cosmic Runner (Game) -->
-          <div class="play-card">
-            <div>
-              <div class="play-card-header">
-                <div class="play-app-icon" style="background: linear-gradient(135deg, #7048e8, #ae3ec9);">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                  </svg>
-                </div>
-                <div class="play-app-info">
-                  <h3>Cosmic Rush: Odyssey</h3>
-                  <div class="play-app-cat">Games • Arcade • Runner</div>
-                  <div class="play-rating">★ 4.9 <span style="color:var(--text-faint); font-weight:normal; margin-left:4px;">(New)</span></div>
-                </div>
+
+
+          <!-- Why PixelCraftin Apps? -->
+          <div class="play-features">
+            <div class="play-feat-card">
+              <div class="play-feat-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
               </div>
-              <p style="margin: 16px 0;">Adrenaline-fueled retro-futuristic space arcade runner. Google Play Games integration, achievements, leaderboards, and ultra-smooth 120 FPS physics.</p>
-              <div class="play-tags">
-                <span class="play-tag">Play Games</span>
-                <span class="play-tag">Leaderboards</span>
-                <span class="play-tag">120 FPS</span>
+              <div class="play-feat-info">
+                <h4>Zero Bloatware</h4>
+                <p>Minimal binary sizes, fast cold startup, and zero unwanted background services.</p>
               </div>
             </div>
-            <a class="play-btn" href="https://play.google.com/store/apps/dev?id=PixelCraftin+Studios" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
-                <path d="M3.6 1.8A1.8 1.8 0 0 0 3 3.3v17.4a1.8 1.8 0 0 0 .6 1.5l.1.1 9.8-9.8v-.2L3.7 1.7l-.1.1z" fill="#00D3FF"/>
-                <path d="M16.7 15.6l-3.2-3.2v-.2l3.2-3.2.1.1 3.8 2.2c1.1.6 1.1 1.6 0 2.2l-3.9 2.1z" fill="#FFCE00"/>
-                <path d="M13.5 12.2L3.6 22.1c.4.4 1 .4 1.7.1l11.4-6.6-3.2-3.4z" fill="#FF3A44"/>
-                <path d="M13.5 11.8l3.2-3.4L5.3 1.8c-.7-.3-1.3-.3-1.7.1l9.9 9.9z" fill="#00E676"/>
-              </svg>
-              <div class="play-btn-text">
-                <span class="play-btn-sub">GET IT ON</span>
-                <span class="play-btn-title">Google Play</span>
+
+            <div class="play-feat-card">
+              <div class="play-feat-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="4.93" y1="4.93" x2="19.07" y2="19.07" />
+                </svg>
               </div>
-            </a>
+              <div class="play-feat-info">
+                <h4>Ad-Free Experience</h4>
+                <p>No popups, no tracking analytics, no banners, and zero third-party data broker SDKs.</p>
+              </div>
+            </div>
+
+            <div class="play-feat-card">
+              <div class="play-feat-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 14.42 22 12A10 10 0 0 0 12 2z" />
+                </svg>
+              </div>
+              <div class="play-feat-info">
+                <h4>Open Source</h4>
+                <p>Transparent codebases hosted on GitHub. Inspect, fork, contribute, or build yourself.</p>
+              </div>
+            </div>
+
+            <div class="play-feat-card">
+              <div class="play-feat-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+              </div>
+              <div class="play-feat-info">
+                <h4>Native Speed</h4>
+                <p>Written in native Kotlin and Jetpack Compose for buttery-smooth 120Hz frame rates.</p>
+              </div>
+            </div>
           </div>
 
         </div>
-
-        <!-- Google Play Standards Banner -->
-        <div class="play-features">
-          <div class="play-feat-card">
-            <div class="play-feat-icon">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-              </svg>
-            </div>
-            <div class="play-feat-info">
-              <h4>Play Protect Certified</h4>
-              <p>Every APK &amp; App Bundle is verified clean, malware-free, and tested against rigorous Android security standards.</p>
-            </div>
-          </div>
-
-          <div class="play-feat-card">
-            <div class="play-feat-icon">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10" />
-                <path d="m4.93 4.93 14.14 14.14" />
-              </svg>
-            </div>
-            <div class="play-feat-info">
-              <h4>Zero Invasive Tracking</h4>
-              <p>We respect your device. No telemetry hogging your battery, zero intrusive user tracking, and full privacy controls.</p>
-            </div>
-          </div>
-
-          <div class="play-feat-card">
-            <div class="play-feat-icon">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-              </svg>
-            </div>
-            <div class="play-feat-info">
-              <h4>Google Play Games Services</h4>
-              <p>Seamless cloud save synchronization, cross-device achievement unlocking, and real-time global leaderboards.</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
     </section>
 
   </main>
@@ -326,44 +361,49 @@
       <div class="footer-top">
         <div class="footer-brand">
           <h3>PIXELCRAFTIN STUDIO</h3>
-          <p>Building the future with brilliant apps &amp; games.</p>
+          <p>Crafting apps that push boundaries.</p>
         </div>
         <div class="footer-cols">
           <div class="footer-col">
             <span class="h">Apps &amp; Games</span>
-            <a href="apps.html#elements">Calc+</a>
+            <a href="apps.html#elements">Elements Widgets</a>
+            <a href="apps.html#n-calc">Calc+</a>
             <a href="apps.html#n-dial">PdfEditor</a>
-            <a href="apps.html#noting-notes">Noting Notes</a>
+            <a href="apps.html#noting-notes">Quik Note</a>
           </div>
           <div class="footer-col">
             <span class="h">Studio</span>
             <a href="about.html">About Us</a>
-            <a href="store.html" class="active">Store</a>
-            <a href="timeline.html">Timeline</a>
+            <a href="faq.html">FAQ</a>
             <a href="contact.html">Contact</a>
+            <a href="https://github.com/pixelcraftin" target="_blank" rel="noopener">GitHub</a>
           </div>
           <div class="footer-col">
             <span class="h">Legal</span>
             <a href="privacy.html">Privacy Policy</a>
+            <a href="policy.html">App Policies</a>
             <a href="terms.html">Terms &amp; Conditions</a>
           </div>
           <div class="footer-col">
             <span class="h">Follow</span>
             <div class="footer-social">
-              <a href="https://twitter.com/CraftinPixel" target="_blank" rel="noopener" aria-label="X / Twitter"><svg
+              <a href="https://github.com/pixelcraftin" target="_blank" rel="noopener" aria-label="GitHub"><svg
                   viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M3 3h3.6l5 6.6L17 3h3l-6.7 8.4L21 21h-3.6l-5.4-7.1L6.6 21H3.5l7.2-9.1L3 3Z" />
+                  <path
+                    d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 14.42 22 12A10 10 0 0 0 12 2z" />
                 </svg></a>
-              <a href="#" aria-label="Discord"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
-                  viewBox="0 0 24 24">
-                  <title xmlns="">baseline-discord</title>
+              <a href="https://twitter.com/CraftinPixel" target="_blank" rel="noopener" aria-label="X / Twitter"><svg
+                  xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16">
+                  <title xmlns="">twitter</title>
                   <path fill="currentColor"
-                    d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.1.1 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.1 16.1 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02M8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12m6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12" />
+                    d="M9.294 6.928L14.357 1h-1.2L8.762 6.147L5.25 1H1.2l5.31 7.784L1.2 15h1.2l4.642-5.436L10.751 15h4.05zM7.651 8.852l-.538-.775L2.832 1.91h1.843l3.454 4.977l.538.775l4.491 6.47h-1.843z" />
                 </svg></a>
-              <a href="mailto:pixelcraftinstudio@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="1.8">
-                  <rect x="3" y="5" width="18" height="14" rx="2" />
-                  <path d="m3 7 9 6 9-6" />
+              <a href="mailto:pixelcraftinstudio@gmail.com" aria-label="Email">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                  <title xmlns="">mail</title>
+                  <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="m2.357 7.714l6.98 4.654c.963.641 1.444.962 1.964 1.087c.46.11.939.11 1.398 0c.52-.125 1.001-.446 1.964-1.087l6.98-4.654M7.157 19.5h9.686c1.68 0 2.52 0 3.162-.327a3 3 0 0 0 1.31-1.311c.328-.642.328-1.482.328-3.162V9.3c0-1.68 0-2.52-.327-3.162a3 3 0 0 0-1.311-1.311c-.642-.327-1.482-.327-3.162-.327H7.157c-1.68 0-2.52 0-3.162.327a3 3 0 0 0-1.31 1.311c-.328.642-.328 1.482-.328 3.162v5.4c0 1.68 0 2.52.327 3.162a3 3 0 0 0 1.311 1.311c.642.327 1.482.327 3.162.327" />
                 </svg></a>
             </div>
           </div>
@@ -373,7 +413,11 @@
         <div class="footer-bottom-links">
           <a href="about.html">About Us</a>
           <span class="sep">•</span>
+          <a href="faq.html">FAQ</a>
+          <span class="sep">•</span>
           <a href="privacy.html">Privacy Policy</a>
+          <span class="sep">•</span>
+          <a href="policy.html">App Policies</a>
           <span class="sep">•</span>
           <a href="terms.html">Terms &amp; Conditions</a>
         </div>
@@ -383,6 +427,34 @@
   </footer>
 
   <script src="js/script.js"></script>
+  <script>
+    // Category Filtering
+    document.addEventListener('DOMContentLoaded', function () {
+      var filterBtns = document.querySelectorAll('.filter-btn');
+      var appCards = document.querySelectorAll('[data-app-card]');
+
+      filterBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          filterBtns.forEach(function (b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+
+          var cat = btn.getAttribute('data-category');
+          appCards.forEach(function (card) {
+            if (cat === 'all') {
+              card.style.display = 'flex';
+            } else {
+              var cardCats = card.getAttribute('data-categories') || '';
+              if (cardCats.indexOf(cat) !== -1) {
+                card.style.display = 'flex';
+              } else {
+                card.style.display = 'none';
+              }
+            }
+          });
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>

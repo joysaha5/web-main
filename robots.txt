@@ -1,0 +1,11 @@
+# robots.txt for PixelCraftin Studio
+# https://pixelcraftin.co.in
+
+User-agent: *
+Allow: /
+
+# Disallow sensitive asset scratch directories if any
+Disallow: /scratch/
+
+# Sitemap location
+Sitemap: https://pixelcraftin.co.in/sitemap.xml

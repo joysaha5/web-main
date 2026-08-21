@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>App Policies — PixelCraftin Studio</title>
+  <meta name="description"
+    content="App-specific privacy policies covering local data, Android permissions, external services, and support information for PixelCraftin Studio apps.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="PixelCraftin">
+  <meta name="theme-color" content="#0a0a0c">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <canvas id="starfield"></canvas>
+
+  <header class="site-header">
+    <div class="capsule">
+      <a href="index.html" class="brand">PixelCraftin <span>studio</span></a>
+      <nav class="nav-links" data-nav>
+        <a href="apps.html">Apps</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+        <a href="https://github.com/pixelcraftin" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <div class="header-actions">
+        <button class="robo-btn" data-robo-toggle aria-label="Open Robo">
+          <img src="ROBO.webp" alt="Robo" class="robo-icon">
+        </button>
+        <button class="theme-toggle" data-theme-toggle aria-label="Toggle color theme">
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z" />
+          </svg>
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="4.2" />
+            <path
+              d="M12 2.5v2.4M12 19.1v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7" />
+          </svg>
+        </button>
+        <button class="menu-btn" data-menu-toggle aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <nav class="mobile-panel" data-mobile-panel data-nav>
+    <a href="apps.html">Apps</a>
+    <a href="contact.html">Contact</a>
+    <a href="about.html">About</a>
+    <a href="https://github.com/pixelcraftin" target="_blank" rel="noopener">GitHub</a>
+  </nav>
+
+  <main class="page doc-page">
+    <div class="wrap">
+
+      <!-- Policy Hero with Common Baseline -->
+      <div class="policy-hero-wrap">
+        <div class="policy-hero-left">
+          <span class="eyebrow rule">App Privacy</span>
+          <h1>Privacy policies<br>by app</h1>
+          <p>
+            Each policy describes the app's on-device data, Android permissions, and when another app or service handles
+            data.
+          </p>
+        </div>
+
+        <div class="policy-baseline-card">
+          <h3>Common baseline</h3>
+          <ul class="policy-baseline-list">
+            <li>No PixelCraftin account or cloud service.</li>
+            <li>No advertising or tracking.</li>
+            <li>No unnecessary permissions.</li>
+            <li>No diagnostic or usage logs sent to PixelCraftin.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="policy-divider"></div>
+
+      <!-- Choose an App Section with Compact 3-Col Card Grid -->
+      <section style="padding: 0 0 40px;">
+        <div class="policy-choose-head">
+          <div>
+            <span class="eyebrow rule">Current Apps</span>
+            <h2>Choose an app</h2>
+          </div>
+          <p>Each policy lists the app's data access, permissions, and sharing behavior.</p>
+        </div>
+
+        <div class="policy-app-grid">
+
+          <!-- Calc+ -->
+          <a class="policy-app-card" href="App Policy/calc-policy.html" id="calc-policy">
+            <div class="policy-app-card-left">
+              <div class="policy-app-card-icon" style="background: linear-gradient(135deg, #4f46e5, #5c7cfa);">
+                <img src="icons/Calc+ icon.webp" alt="Calc+ Icon">
+              </div>
+              <div class="policy-app-card-meta">
+                <h4>Calc+</h4>
+                <span>July 12, 2026</span>
+              </div>
+            </div>
+            <span class="policy-badge stable">Stable</span>
+          </a>
+
+          <!-- PdfEditor+ -->
+          <a class="policy-app-card" href="App Policy/pdf-policy.html" id="pdf-policy">
+            <div class="policy-app-card-left">
+              <div class="policy-app-card-icon" style="background: linear-gradient(135deg, #e11d48, #f43f5e);">
+                <img src="icons/PdfEditor+ icon.webp" alt="PdfEditor+ Icon">
+              </div>
+              <div class="policy-app-card-meta">
+                <h4>PdfEditor+</h4>
+                <span>July 23, 2026</span>
+              </div>
+            </div>
+            <span class="policy-badge stable">Stable</span>
+          </a>
+
+          <!-- Quik Note -->
+          <a class="policy-app-card" href="App Policy/notes-policy.html" id="notes-policy">
+            <div class="policy-app-card-left">
+              <div class="policy-app-card-icon" style="background: linear-gradient(135deg, #059669, #10b981);">
+                <img src="icons/Quik Note icon.webp" alt="Quik Note Icon">
+              </div>
+              <div class="policy-app-card-meta">
+                <h4>Quik Note</h4>
+                <span>August 14, 2026</span>
+              </div>
+            </div>
+            <span class="policy-badge Beta">Beta</span>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- Standard Policy Sections -->
+      <div class="doc-layout">
+
+        <!-- Table of Contents Sidebar -->
+        <aside class="doc-sidebar">
+          <div class="doc-sidebar-title">Policy Sections</div>
+          <nav class="doc-nav-list">
+            <a href="#core-principles">1. Core Architecture</a>
+            <a href="#permissions-guide">2. Permissions Guide</a>
+            <a href="#user-controls">3. User Controls &amp; Deletion</a>
+            <a href="#support">4. Support &amp; Inquiries</a>
+          </nav>
+        </aside>
+
+        <!-- Document Content Body -->
+        <div class="doc-body">
+
+          <!-- 01. Core Principles -->
+          <section class="doc-section" id="core-principles">
+            <h2><span class="sec-num">01.</span> Core Privacy Architecture</h2>
+            <p>
+              At PixelCraftin Studio, our applications are built around the philosophy that your data belongs entirely
+              to you. Each application operates in a self-contained sandbox with strict privacy guarantees:
+            </p>
+            <div class="doc-callout">
+              <p><strong>Fundamental Guarantees:</strong></p>
+              <ul style="margin: 8px 0 0; padding-left: 20px;">
+                <li><strong>No Remote Telemetry:</strong> Offline utility apps do not request the Android
+                  <code>INTERNET</code> permission.
+                </li>
+                <li><strong>Zero Advertisements:</strong> We do not include third-party advertising SDKs or tracking
+                  libraries.</li>
+                <li><strong>On-Device Processing:</strong> Calculations, documents, notes, and file operations execute
+                  locally on your hardware.</li>
+                <li><strong>Minimal Permissions:</strong> We only request Android permissions strictly required for
+                  user-initiated actions.</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- 02. Permissions Reference Guide -->
+          <section class="doc-section" id="permissions-guide">
+            <h2><span class="sec-num">02.</span> Permissions Reference Guide</h2>
+            <p>Below is an overview of standard Android permissions used across our catalog:</p>
+
+            <div style="overflow-x:auto; margin: 20px 0;">
+              <table style="width:100%; border-collapse:collapse; font-size:.9rem; text-align:left;">
+                <thead>
+                  <tr style="border-bottom:2px solid var(--border); color:var(--text);">
+                    <th
+                      style="padding:12px 14px; font-family:var(--font-mono); font-size:.78rem; text-transform:uppercase;">
+                      Permission</th>
+                    <th
+                      style="padding:12px 14px; font-family:var(--font-mono); font-size:.78rem; text-transform:uppercase;">
+                      Apps</th>
+                    <th
+                      style="padding:12px 14px; font-family:var(--font-mono); font-size:.78rem; text-transform:uppercase;">
+                      Purpose</th>
+                  </tr>
+                </thead>
+                <tbody style="color:var(--text-muted);">
+                  <tr style="border-bottom:1px solid var(--border-soft);">
+                    <td style="padding:12px 14px; font-family:var(--font-mono); font-size:.75rem; color:var(--accent);">
+                      VIBRATE</td>
+                    <td style="padding:12px 14px;">Calc+</td>
+                    <td style="padding:12px 14px;">Provide tactile haptic feedback for keypresses.</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border-soft);">
+                    <td style="padding:12px 14px; font-family:var(--font-mono); font-size:.75rem; color:var(--accent);">
+                      MANAGE_EXTERNAL_STORAGE</td>
+                    <td style="padding:12px 14px;">PdfEditor</td>
+                    <td style="padding:12px 14px;">Perform Image Compression, and PDF
+                      edits.</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border-soft);">
+                    <td style="padding:12px 14px; font-family:var(--font-mono); font-size:.75rem; color:var(--accent);">
+                      USE_BIOMETRIC</td>
+                    <td style="padding:12px 14px;">Quik Note</td>
+                    <td style="padding:12px 14px;">Unlock password-protected markdown notes via Android BiometricPrompt.
+                    </td>
+                  </tr>
+
+                  <tr style="border-bottom:1px solid var(--border-soft);">
+                    <td style="padding:12px 14px; font-family:var(--font-mono); font-size:.75rem; color:var(--accent);">
+                      POST_NOTIFICATIONS</td>
+                    <td style="padding:12px 14px;">Quik Note</td>
+                    <td style="padding:12px 14px;">Display background file operations progress and user-scheduled
+                      reminders.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- 03. User Controls & Deletion -->
+          <section class="doc-section" id="user-controls">
+            <h2><span class="sec-num">03.</span> User Controls &amp; Data Deletion</h2>
+            <p>
+              You maintain full authority over permissions and data stored by PixelCraftin applications:
+            </p>
+            <ul>
+              <li><strong>Permission Revocation:</strong> You can grant or revoke any permission at any time via
+                <em>Android Settings &gt; Apps &gt; [App Name] &gt; Permissions</em>.
+              </li>
+              <li><strong>Local Data Deletion:</strong> Uninstalling any application instantly and permanently erases
+                its local database, preferences, and cache from your device storage.</li>
+              <li><strong>Clear Storage:</strong> You may clear app data without uninstalling via <em>Android Settings
+                  &gt; Apps &gt; [App Name] &gt; Storage &gt; Clear Storage</em>.</li>
+            </ul>
+          </section>
+
+          <!-- 04. Support & Contact -->
+          <section class="doc-section" id="support">
+            <h2><span class="sec-num">04.</span> Policy Questions &amp; Support</h2>
+            <p>
+              If you have any questions regarding our app policies, permissions, or open-source implementations, please
+              contact our team:
+            </p>
+            <div class="doc-callout">
+              <p><strong>Email:</strong> <a href="mailto:pixelcraftinstudio@gmail.com"
+                  style="color:var(--accent);">pixelcraftinstudio@gmail.com</a></p>
+              <p><strong>GitHub Organization:</strong> <a href="https://github.com/pixelcraftin" target="_blank"
+                  rel="noopener" style="color:var(--accent);">github.com/pixelcraftin</a></p>
+              <p><strong>Help &amp; Support Page:</strong> <a href="contact.html"
+                  style="color:var(--accent);">pixelcraftin.co.in/contact.html</a></p>
+            </div>
+          </section>
+
+        </div>
+      </div>
+
+    </div>
+  <footer>
+    <div class="wrap">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h3>PIXELCRAFTIN STUDIO</h3>
+          <p>Crafting apps that push boundaries.</p>
+        </div>
+        <div class="footer-cols">
+          <div class="footer-col">
+            <span class="h">Apps &amp; Games</span>
+            <a href="apps.html#calc">Calc+</a>
+            <a href="apps.html#pdf">PdfEditor+</a>
+            <a href="apps.html#notes">Quik Note</a>
+          </div>
+          <div class="footer-col">
+            <span class="h">Studio</span>
+            <a href="about.html">About Us</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact</a>
+            <a href="https://github.com/pixelcraftin" target="_blank" rel="noopener">GitHub</a>
+          </div>
+          <div class="footer-col">
+            <span class="h">Legal</span>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="policy.html" class="active">App Policies</a>
+            <a href="terms.html">Terms &amp; Conditions</a>
+          </div>
+          <div class="footer-col">
+            <span class="h">Follow</span>
+            <div class="footer-social">
+              <a href="https://github.com/pixelcraftin" target="_blank" rel="noopener" aria-label="GitHub"><svg
+                  viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 14.42 22 12A10 10 0 0 0 12 2z" />
+                </svg></a>
+              <a href="https://twitter.com/CraftinPixel" target="_blank" rel="noopener" aria-label="X / Twitter"><svg
+                  xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16">
+                  <title xmlns="">twitter</title>
+                  <path fill="currentColor"
+                    d="M9.294 6.928L14.357 1h-1.2L8.762 6.147L5.25 1H1.2l5.31 7.784L1.2 15h1.2l4.642-5.436L10.751 15h4.05zM7.651 8.852l-.538-.775L2.832 1.91h1.843l3.454 4.977l.538.775l4.491 6.47h-1.843z" />
+                </svg></a>
+              <a href="mailto:pixelcraftinstudio@gmail.com" aria-label="Email">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                  <title xmlns="">mail</title>
+                  <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="m2.357 7.714l6.98 4.654c.963.641 1.444.962 1.964 1.087c.46.11.939.11 1.398 0c.52-.125 1.001-.446 1.964-1.087l6.98-4.654M7.157 19.5h9.686c1.68 0 2.52 0 3.162-.327a3 3 0 0 0 1.31-1.311c.328-.642.328-1.482.328-3.162V9.3c0-1.68 0-2.52-.327-3.162a3 3 0 0 0-1.311-1.311c-.642-.327-1.482-.327-3.162-.327H7.157c-1.68 0-2.52 0-3.162.327a3 3 0 0 0-1.31 1.311c-.328.642-.328 1.482-.328 3.162v5.4c0 1.68 0 2.52.327 3.162a3 3 0 0 0 1.311 1.311c.642.327 1.482.327 3.162.327" />
+                </svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-bottom-links">
+          <a href="about.html">About Us</a>
+          <span class="sep">•</span>
+          <a href="faq.html">FAQ</a>
+          <span class="sep">•</span>
+          <a href="privacy.html">Privacy Policy</a>
+          <span class="sep">•</span>
+          <a href="policy.html">App Policies</a>
+          <span class="sep">•</span>
+          <a href="terms.html">Terms &amp; Conditions</a>
+        </div>
+        <div>© 2026 PixelCraftin Studio. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>

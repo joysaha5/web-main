@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Frequently Asked Questions (FAQ) — PixelCraftin Studio</title>
+  <meta name="description"
+    content="Answers to frequently asked questions about PixelCraftin apps, installs, GitHub releases, open-source code, privacy, permissions, and support.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="PixelCraftin">
+  <meta name="theme-color" content="#0a0a0c">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <canvas id="starfield"></canvas>
+
+  <header class="site-header">
+    <div class="capsule">
+      <a href="index.html" class="brand">PixelCraftin <span>studio</span></a>
+      <nav class="nav-links" data-nav>
+        <a href="apps.html">Apps</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+        <a href="https://github.com/pixelcraftin" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <div class="header-actions">
+        <button class="robo-btn" data-robo-toggle aria-label="Open Robo">
+          <img src="ROBO.webp" alt="Robo" class="robo-icon">
+        </button>
+        <button class="theme-toggle" data-theme-toggle aria-label="Toggle color theme">
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z" />
+          </svg>
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="4.2" />
+            <path
+              d="M12 2.5v2.4M12 19.1v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7" />
+          </svg>
+        </button>
+        <button class="menu-btn" data-menu-toggle aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <nav class="mobile-panel" data-mobile-panel data-nav>
+    <a href="apps.html">Apps</a>
+    <a href="contact.html">Contact</a>
+    <a href="about.html">About</a>
+    <a href="https://github.com/pixelcraftin" target="_blank" rel="noopener">GitHub</a>
+  </nav>
+
+  <main class="page doc-page">
+    <div class="wrap">
+
+      <div class="doc-hero">
+        <span class="eyebrow">Help &amp; Knowledge Base</span>
+        <h1>Frequently Asked <em>Questions</em></h1>
+        <p class="sub" style="margin: 18px 0 0; color: var(--text-muted); font-size: 1.15rem; line-height: 1.7;">
+          Answers about PixelCraftin apps, installs, Google Play releases, open-source code, Android permissions, privacy guarantees, and community contributions.
+        </p>
+        <div class="doc-meta">
+          <span class="doc-badge">Official FAQ</span>
+          <span>•</span>
+          <span>Last Updated: August 2026</span>
+          <span>•</span>
+          <span>Community Supported</span>
+        </div>
+      </div>
+
+      <div class="doc-layout">
+
+        <!-- Table of Contents Sidebar -->
+        <aside class="doc-sidebar">
+          <div class="doc-sidebar-title">Categories</div>
+          <nav class="doc-nav-list">
+            <a href="#general">1. General &amp; Philosophy</a>
+            <a href="#downloads">2. Downloads &amp; Installs</a>
+            <a href="#privacy-security">3. Privacy &amp; Permissions</a>
+            <a href="#apps-features">4. Apps &amp; Features</a>
+            <a href="#contributions">5. Contributions &amp; Support</a>
+          </nav>
+        </aside>
+
+        <!-- Document Content Body -->
+        <div class="doc-body">
+
+          <!-- 01. General & Philosophy -->
+          <section class="doc-section" id="general">
+            <h2><span class="sec-num">01.</span> General &amp; Philosophy</h2>
+            
+            <div class="doc-callout" style="margin-bottom: 24px;">
+              <h3 style="margin-top:0; font-size:1.15rem;">What is PixelCraftin Studio?</h3>
+              <p>PixelCraftin Studio is an independent development collective building clean, lightweight, and privacy-respecting Android applications and games. We craft tools that do their job fast without ads, telemetry, or bloatware.</p>
+            </div>
+
+            <div class="doc-callout" style="margin-bottom: 24px;">
+              <h3 style="margin-top:0; font-size:1.15rem;">Are the apps really free from advertisements and tracking?</h3>
+              <p>Yes, absolutely. None of our utility applications (such as Calc+, PdfEditor+, Quik Note) contain third-party advertising SDKs, background telemetry, or behavioral tracking libraries. Your data remains strictly on your device.</p>
+            </div>
+
+            <div class="doc-callout">
+              <h3 style="margin-top:0; font-size:1.15rem;">Is the source code open-source?</h3>
+              <p>Yes. Our app source codebases are published on GitHub for public inspection, security auditing, and community contributions under open-source licenses.</p>
+            </div>
+          </section>
+
+          <!-- 02. Downloads & Installs -->
+          <section class="doc-section" id="downloads">
+            <h2><span class="sec-num">02.</span> Downloads &amp; Installs</h2>
+
+            <div class="doc-callout" style="margin-bottom: 24px;">
+              <h3 style="margin-top:0; font-size:1.15rem;">Where can I download PixelCraftin apps?</h3>
+              <p>You can install our apps directly through the official <strong>Google Play Store</strong> catalog or download signed APK releases directly from our <strong>GitHub Releases</strong> repositories.</p>
+              <div style="display:flex; gap:10px; margin-top:12px; flex-wrap:wrap;">
+                <a class="app-action-btn primary" href="https://play.google.com/store/apps/dev?id=PixelCraftin+Studios" target="_blank" rel="noopener">Google Play Catalog</a>
+                <a class="app-action-btn" href="https://github.com/pixelcraftin" target="_blank" rel="noopener">GitHub Releases</a>
+              </div>
+            </div>
+
+            <div class="doc-callout" style="margin-bottom: 24px;">
+              <h3 style="margin-top:0; font-size:1.15rem;">How do updates work?</h3>
+              <p>If you installed via Google Play, updates are delivered automatically through the Play Store. If you installed via direct APK from GitHub, you can download newer APK releases and install them over your existing version without losing your local data.</p>
+            </div>
+
+            <div class="doc-callout">
+              <h3 style="margin-top:0; font-size:1.15rem;">Which Android versions are supported?</h3>
+              <p>Our applications target modern Android versions (Android 8.0 Oreo up to Android 15), with support for Material You dynamic theming and high-refresh 120 FPS displays.</p>
+            </div>
+          </section>
+
+          <!-- 03. Privacy & Permissions -->
+          <section class="doc-section" id="privacy-security">
+            <h2><span class="sec-num">03.</span> Privacy &amp; Permissions</h2>
+
+            <div class="doc-callout" style="margin-bottom: 24px;">
+              <h3 style="margin-top:0; font-size:1.15rem;">Why do apps request certain Android permissions?</h3>
+              <p>We strictly request only the minimum Android permissions necessary for user-directed tasks:</p>
+              <ul style="margin: 8px 0 0; padding-left: 20px;">
+                <li><code>VIBRATE</code>: Tactile haptic feedback on button presses.</li>
+                <li><code>MANAGE_EXTERNAL_STORAGE</code>: Used by document and file tools to open, edit, and save files selected by you.</li>
+                <li><code>USE_BIOMETRIC</code>: Unlocking password-protected notes locally without storing passwords in plain text.</li>
+              </ul>
+            </div>
+
+            <div class="doc-callout" style="margin-bottom: 24px;">
+              <h3 style="margin-top:0; font-size:1.15rem;">Is any personal data uploaded to remote servers?</h3>
+              <p>No. Calculations, PDF documents, and notes are processed and stored locally on your device storage. Our offline utility apps do not request the Android <code>INTERNET</code> permission.</p>
+            </div>
+
+            <div class="doc-callout">
+              <h3 style="margin-top:0; font-size:1.15rem;">How can I delete all stored data?</h3>
+              <p>You can clear local data at any time via <em>Android Settings &gt; Apps &gt; [App Name] &gt; Storage &gt; Clear Data</em>, or by uninstalling the application, which permanently purges all local databases and cache.</p>
+            </div>
+          </section>
+
+          <!-- 04. Apps & Features -->
+          <section class="doc-section" id="apps-features">
+            <h2><span class="sec-num">04.</span> Apps &amp; Features</h2>
+
+            <div class="doc-callout" style="margin-bottom: 24px;">
+              <h3 style="margin-top:0; font-size:1.15rem;">What is Calc+?</h3>
+              <p>Calc+ is a Nothing OS inspired minimal calculator designed for quick math, unit and currency conversions, history tape tracking, and tactile haptic feedback with zero ads.</p>
+            </div>
+
+            <div class="doc-callout" style="margin-bottom: 24px;">
+              <h3 style="margin-top:0; font-size:1.15rem;">What is PdfEditor+?</h3>
+              <p>PdfEditor+ is a local PDF utility to view, annotate, merge, split, and digitally sign PDF documents on your device without watermarks or cloud uploads.</p>
+            </div>
+
+            <div class="doc-callout">
+              <h3 style="margin-top:0; font-size:1.15rem;">What is Quik Note?</h3>
+              <p>Quik Note is a fast, distraction-free note-taking tool and checklist manager with on-device AES encryption, tags, and local search.</p>
+            </div>
+          </section>
+
+          <!-- 05. Contributions & Support -->
+          <section class="doc-section" id="contributions">
+            <h2><span class="sec-num">05.</span> Contributions &amp; Support</h2>
+
+            <div class="doc-callout" style="margin-bottom: 24px;">
+              <h3 style="margin-top:0; font-size:1.15rem;">How do I report a bug or request a new feature?</h3>
+              <p>Please use the specific application issue tracker on GitHub. Provide your device model, Android version, and reproduction steps so our team can resolve it promptly.</p>
+              <div style="margin-top:12px;">
+                <a class="app-action-btn primary" href="contact.html#issue-trackers">Choose App Issue Tracker</a>
+              </div>
+            </div>
+
+            <div class="doc-callout" style="margin-bottom: 24px;">
+              <h3 style="margin-top:0; font-size:1.15rem;">Can I contribute code or translations?</h3>
+              <p>Yes! We welcome pull requests, documentation improvements, and localization assistance on our GitHub repositories.</p>
+            </div>
+
+            <div class="doc-callout">
+              <h3 style="margin-top:0; font-size:1.15rem;">How can I contact the team for private inquiries?</h3>
+              <p>For security disclosures, press inquiries, or private support, email us directly at <a href="mailto:pixelcraftinstudio@gmail.com" style="color:var(--accent);">pixelcraftinstudio@gmail.com</a> or use the <a href="contact.html#direct-contact" style="color:var(--accent);">Contact Form</a>.</p>
+            </div>
+          </section>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h3>PIXELCRAFTIN STUDIO</h3>
+          <p>Crafting apps that push boundaries.</p>
+        </div>
+        <div class="footer-cols">
+          <div class="footer-col">
+            <span class="h">Apps &amp; Games</span>
+            <a href="apps.html#n-calc">Calc+</a>
+            <a href="apps.html#n-dial">PdfEditor+</a>
+            <a href="apps.html#noting-notes">Quik Note</a>
+          </div>
+          <div class="footer-col">
+            <span class="h">Studio</span>
+            <a href="about.html">About Us</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Contact</a>
+            <a href="https://github.com/pixelcraftin" target="_blank" rel="noopener">GitHub</a>
+          </div>
+          <div class="footer-col">
+            <span class="h">Legal</span>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="policy.html">App Policies</a>
+            <a href="terms.html">Terms &amp; Conditions</a>
+          </div>
+          <div class="footer-col">
+            <span class="h">Follow</span>
+            <div class="footer-social">
+              <a href="https://github.com/pixelcraftin" target="_blank" rel="noopener" aria-label="GitHub"><svg
+                  viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 14.42 22 12A10 10 0 0 0 12 2z" />
+                </svg></a>
+              <a href="https://twitter.com/CraftinPixel" target="_blank" rel="noopener" aria-label="X / Twitter"><svg
+                  xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16">
+                  <title xmlns="">twitter</title>
+                  <path fill="currentColor"
+                    d="M9.294 6.928L14.357 1h-1.2L8.762 6.147L5.25 1H1.2l5.31 7.784L1.2 15h1.2l4.642-5.436L10.751 15h4.05zM7.651 8.852l-.538-.775L2.832 1.91h1.843l3.454 4.977l.538.775l4.491 6.47h-1.843z" />
+                </svg></a>
+              <a href="mailto:pixelcraftinstudio@gmail.com" aria-label="Email">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                  <title xmlns="">mail</title>
+                  <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="m2.357 7.714l6.98 4.654c.963.641 1.444.962 1.964 1.087c.46.11.939.11 1.398 0c.52-.125 1.001-.446 1.964-1.087l6.98-4.654M7.157 19.5h9.686c1.68 0 2.52 0 3.162-.327a3 3 0 0 0 1.31-1.311c.328-.642.328-1.482.328-3.162V9.3c0-1.68 0-2.52-.327-3.162a3 3 0 0 0-1.311-1.311c-.642-.327-1.482-.327-3.162-.327H7.157c-1.68 0-2.52 0-3.162.327a3 3 0 0 0-1.31 1.311c-.328.642-.328 1.482-.328 3.162v5.4c0 1.68 0 2.52.327 3.162a3 3 0 0 0 1.311 1.311c.642.327 1.482.327 3.162.327" />
+                </svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-bottom-links">
+          <a href="about.html">About Us</a>
+          <span class="sep">•</span>
+          <a href="faq.html">FAQ</a>
+          <span class="sep">•</span>
+          <a href="privacy.html">Privacy Policy</a>
+          <span class="sep">•</span>
+          <a href="policy.html">App Policies</a>
+          <span class="sep">•</span>
+          <a href="terms.html">Terms &amp; Conditions</a>
+        </div>
+        <div>© 2026 PixelCraftin Studio. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
