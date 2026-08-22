@@ -1,0 +1,801 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mockup Generator v4</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#6d6d74;font-family:Arial,sans-serif}
+.wrap{max-width:1100px;margin:auto;padding:14px}
+canvas{display:block;width:100%;height:auto;border-radius:14px}
+.panel{margin-top:14px;background:#1f1f22;color:#fff;border-radius:12px;padding:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+label{font-size:12px;display:block}
+input[type=range],input[type=color],select{width:100%}
+button{margin-top:16px;padding:12px 20px;border:0;border-radius:8px;background:#2878ff;color:#fff;font-weight:bold;cursor:pointer}
+input[type=file]{display:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+<canvas id="cv" width="2500" height="3000"></canvas>
+<input type="file" id="phoneFile" accept="image/*">
+<input type="file" id="tabFile" accept="image/*">
+
+<div class="panel">
+<div class="grid">
+<div>
+<label>Background Color 1</label>
+<input id="c1" type="color" value="#000000">
+<input id="hex1" type="text" value="#000000">
+</div>
+
+<div>
+<label>Background Color 2</label>
+<input id="c2" type="color" value="#000000">
+<input id="hex2" type="text" value="#000000">
+</div>
+  
+<div><label>Gradient Type</label><select id="gtype"><option>Linear</option><option>Radial</option></select></div>
+<div><label>Gradient Angle</label><input id="angle" type="range" min="0" max="360" value="90"></div>
+</div>
+  
+  <br />
+  <h3>Background Presets</h3>
+
+<button onclick="preset('blue')">Blue</button>
+
+<button onclick="preset('purple')">Purple</button>
+
+<button onclick="preset('dark')">Dark</button>
+
+<button onclick="preset('nothing')">Nothing</button>
+
+<button onclick="preset('sunset')">Sunset</button>
+
+<button onclick="preset('forest')">Forest</button>
+
+<button onclick="preset('reset')">Reset</button>
+  
+  <br /> <br />
+  
+  <h3>Background Presets</h3>
+
+<select id="presetSelect" onchange="applyPreset(this.value)">
+    <option value="">Choose Preset</option>
+
+    <option value="appleBlue">Apple Blue</option>
+    <option value="nothingGray">Nothing Gray</option>
+    <option value="spaceGray">Space Gray</option>
+    <option value="midnight">Midnight</option>
+    <option value="amoled">AMOLED Black</option>
+    <option value="titanium">Titanium</option>
+
+    <option value="ocean">Ocean</option>
+    <option value="sky">Sky</option>
+    <option value="royalBlue">Royal Blue</option>
+    <option value="cyan">Cyan</option>
+    <option value="mint">Mint</option>
+    <option value="emerald">Emerald</option>
+
+    <option value="forest">Forest</option>
+    <option value="olive">Olive</option>
+    <option value="lime">Lime</option>
+
+    <option value="purple">Purple</option>
+    <option value="lavender">Lavender</option>
+    <option value="violet">Violet</option>
+
+    <option value="rose">Rose</option>
+    <option value="pink">Pink</option>
+    <option value="peach">Peach</option>
+
+    <option value="sunset">Sunset</option>
+    <option value="gold">Gold</option>
+    <option value="amber">Amber</option>
+
+    <option value="coffee">Coffee</option>
+    <option value="sand">Sand</option>
+
+    <option value="glass">Glass White</option>
+    <option value="ice">Ice Blue</option>
+    <option value="cyberpunk">Cyberpunk</option>
+    <option value="neon">Neon</option>
+</select>
+  
+  
+  
+  
+ 
+  
+  <div class="panel">
+<h3>Name Watermark</h3>
+
+<label>Name</label>
+<input id="wmText" type="text" value="@ MRJOYSAHA">
+
+<label>Font Size</label>
+<input id="wmSize" type="range" min="30" max="140" value="5">
+
+<label>Text Color</label>
+<input id="wmColor" type="color" value="#ffffff">
+
+<label>Opacity</label>
+<input id="wmOpacity" type="range" min="0" max="100" value="70">
+</div>
+  
+  
+<div style="text-align:center"><button id="download">Download PNG</button></div>
+   <br />
+</div>
+ 
+</div>
+
+<script>
+const cv=document.getElementById("cv"),ctx=cv.getContext("2d");
+let pImg=null,tImg=null;
+const phone={w:520,h:1080},tab={w:1500,h:1080};
+phone.x=(2500-(phone.w+tab.w+140))/2; tab.x=phone.x+phone.w+140; phone.y=tab.y=930;
+
+phoneFile.onchange=e=>load(e.target.files[0],i=>{pImg=i;draw()});
+tabFile.onchange=e=>load(e.target.files[0],i=>{tImg=i;draw()});
+function load(f,cb){if(!f)return;let i=new Image();i.onload=()=>cb(i);i.src=URL.createObjectURL(f)}
+document.querySelectorAll("input,select").forEach(e=>e.oninput=draw);
+
+function rr(x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();}
+
+  function bg(){
+
+    const rad = angle.value * Math.PI / 180;
+
+    // Canvas center
+    const cx = cv.width / 2;
+    const cy = cv.height / 2;
+
+    // Distance long enough to cover the canvas
+    const len = Math.sqrt(cv.width * cv.width + cv.height * cv.height);
+
+    const x1 = cx - Math.cos(rad) * len / 2;
+    const y1 = cy - Math.sin(rad) * len / 2;
+
+    const x2 = cx + Math.cos(rad) * len / 2;
+    const y2 = cy + Math.sin(rad) * len / 2;
+
+    let g;
+
+    if(gtype.value === "Linear"){
+
+        g = ctx.createLinearGradient(x1, y1, x2, y2);
+
+    }else{
+
+        g = ctx.createRadialGradient(
+            cx, cy, 0,
+            cx, cy, len / 2
+        );
+
+    }
+
+  g.addColorStop(0.00, c1.value);
+g.addColorStop(0.40, c1.value);
+
+g.addColorStop(0.60, c2.value);
+g.addColorStop(1.00, c2.value);
+    
+    ctx.fillStyle = g;
+    ctx.fillRect(0, 0, cv.width, cv.height);
+}
+      
+function shadow(r){
+ ctx.save();ctx.filter=`blur(${blur.value}px)`;ctx.fillStyle="rgba(0,0,0,.22)";
+ rr(r.x-0,r.y+0,r.w,r.h,75);ctx.fill();ctx.restore();
+}
+function dev(r,img){
+ shadow(r);
+ ctx.save();rr(r.x,r.y,r.w,r.h,75);ctx.fillStyle="#fff";ctx.fill();ctx.clip();
+ if(img){
+   let s=Math.max(r.w/img.width,r.h/img.height),iw=img.width*s,ih=img.height*s;
+   ctx.drawImage(img,r.x+(r.w-iw)/2,r.y+(r.h-ih)/2,iw,ih);
+ }else{
+   ctx.fillStyle="#dce5ff";ctx.fillRect(r.x,r.y,r.w,r.h);
+   ctx.fillStyle="#666";ctx.font="bold 54px Arial";ctx.textAlign="center";
+   ctx.fillText("Tap to Add",r.x+r.w/2,r.y+r.h/2);
+ }
+ ctx.restore();
+}
+  
+  
+  
+  
+  
+  const DOT_FONT = {
+
+    "@":["0111110","1000001","1011101","1010101","1011111","1000000","0111110"],
+    
+"A":["01110","10001","10001","11111","10001","10001","10001"],
+
+"B":["11110","10001","10001","11110","10001","10001","11110"],
+
+"C":[
+"01111",
+"10000",
+"10000",
+"10000",
+"10000",
+"10000",
+"01111"
+],
+
+"D":[
+"11110",
+"10001",
+"10001",
+"10001",
+"10001",
+"10001",
+"11110"
+],
+
+"E":[
+"11111",
+"10000",
+"10000",
+"11110",
+"10000",
+"10000",
+"11111"
+],
+
+"F":[
+"11111",
+"10000",
+"10000",
+"11110",
+"10000",
+"10000",
+"10000"
+],
+
+"G":[
+"01111",
+"10000",
+"10000",
+"10111",
+"10001",
+"10001",
+"01111"
+],
+
+"H":[
+"10001",
+"10001",
+"10001",
+"11111",
+"10001",
+"10001",
+"10001"
+],
+
+"I":[
+"11111",
+"00100",
+"00100",
+"00100",
+"00100",
+"00100",
+"11111"
+],
+
+"J":[
+"00111",
+"00010",
+"00010",
+"00010",
+"10010",
+"10010",
+"01100"
+],
+
+"K":[
+"10001",
+"10010",
+"10100",
+"11000",
+"10100",
+"10010",
+"10001"
+],
+
+"L":[
+"10000",
+"10000",
+"10000",
+"10000",
+"10000",
+"10000",
+"11111"
+],
+
+"M":[
+"10001",
+"11011",
+"10101",
+"10001",
+"10001",
+"10001",
+"10001"
+],
+
+"N":[
+"10001",
+"11001",
+"10101",
+"10011",
+"10001",
+"10001",
+"10001"
+],
+
+"O":[
+"01110",
+"10001",
+"10001",
+"10001",
+"10001",
+"10001",
+"01110"
+],
+
+"P":[
+"11110",
+"10001",
+"10001",
+"11110",
+"10000",
+"10000",
+"10000"
+],
+
+"Q":[
+"01110",
+"10001",
+"10001",
+"10001",
+"10101",
+"10010",
+"01101"
+],
+
+"R":[
+"11110",
+"10001",
+"10001",
+"11110",
+"10100",
+"10010",
+"10001"
+],
+
+"S":[
+"01111",
+"10000",
+"10000",
+"01110",
+"00001",
+"00001",
+"11110"
+],
+
+"T":[
+"11111",
+"00100",
+"00100",
+"00100",
+"00100",
+"00100",
+"00100"
+],
+
+"U":[
+"10001",
+"10001",
+"10001",
+"10001",
+"10001",
+"10001",
+"01110"
+],
+
+"V":[
+"10001",
+"10001",
+"10001",
+"10001",
+"01010",
+"01010",
+"00100"
+],
+
+"W":[
+"10001",
+"10001",
+"10001",
+"10101",
+"10101",
+"11011",
+"10001"
+],
+
+"X":[
+"10001",
+"01010",
+"00100",
+"00100",
+"00100",
+"01010",
+"10001"
+],
+
+"Y":[
+"10001",
+"01010",
+"00100",
+"00100",
+"00100",
+"00100",
+"00100"
+],
+
+"Z":[
+"11111",
+"00001",
+"00010",
+"00100",
+"01000",
+"10000",
+"11111"
+],
+
+" ":[
+"000",
+"000",
+"000",
+"000",
+"000",
+"000",
+"000"
+]
+
+};
+  
+  
+  function drawDotText(text,x,y,size,color){
+
+    const dot=size/7;
+
+    ctx.fillStyle=color;
+
+    let offset=0;
+
+    text=text.toUpperCase();
+
+    for(const ch of text){
+
+        const map=DOT_FONT[ch] || DOT_FONT[" "];
+
+        for(let row=0;row<map.length;row++){
+
+            for(let col=0;col<map[row].length;col++){
+
+                if(map[row][col]=="1"){
+
+                    ctx.beginPath();
+
+                    ctx.arc(
+                        x+offset+col*dot*1.8,
+                        y+row*dot*1.8,
+                        dot/2,
+                        0,
+                        Math.PI*2
+                    );
+
+                    ctx.fill();
+
+                }
+
+            }
+
+        }
+
+        offset+=dot*11;
+
+    }
+
+}
+  
+  
+  
+  
+  
+  function drawWatermark(){
+
+    const text = wmText.value.toUpperCase();
+
+    ctx.save();
+
+    ctx.globalAlpha = wmOpacity.value / 100;
+
+    ctx.fillStyle = wmColor.value;
+
+    ctx.font = "600 " + wmSize.value + "px Arial";
+
+    ctx.textAlign = "left";
+
+    // Adds spaces between letters
+    const dotted = text.split("").join(" \u00B7 ");
+
+    const x = tab.x + tab.w - 600;
+    const y = tab.y - 120;
+
+    drawDotText(
+    wmText.value,
+    x,
+    y,
+    Number(wmSize.value),
+    wmColor.value
+);
+
+    ctx.restore();
+
+}
+  
+  
+  
+  
+  
+  function drawDate(){
+
+    const today = new Date();
+
+    const months = [
+        "JAN","FEB","MAR","APR","MAY","JUN",
+        "JUL","AUG","SEP","OCT","NOV","DEC"
+    ];
+
+    const text =
+        String(today.getDate()).padStart(2,"0") +
+        " " +
+        months[today.getMonth()] +
+        " " +
+        today.getFullYear();
+
+    ctx.save();
+
+    ctx.fillStyle = "#FFFFFF";
+
+    ctx.globalAlpha = 0.85;
+
+    ctx.font = "bold 41px Arial";
+
+    ctx.textAlign = "left";
+
+    // Top-left position
+    ctx.fillText(text, 120, 150);
+
+    ctx.restore();
+
+}
+  
+  
+  
+  
+  
+function draw(){
+ ctx.clearRect(0,0,2500,3000);
+ bg();
+ ctx.fillStyle="#fff";ctx.font="bold 70px Arial";ctx.textAlign="center";ctx.fillText("",1250,320);
+ drawDate();
+  dev(phone,pImg);
+dev(tab,tImg);
+
+drawWatermark();
+ ctx.filter="none";
+}
+cv.onclick=e=>{
+ let r=cv.getBoundingClientRect(),sx=2500/r.width,sy=3000/r.height,x=(e.clientX-r.left)*sx,y=(e.clientY-r.top)*sy;
+ let inside=o=>x>o.x&&x<o.x+o.w&&y>o.y&&y<o.y+o.h;
+ if(inside(phone))phoneFile.click(); else if(inside(tab))tabFile.click();
+}
+download.onclick=()=>{let a=document.createElement("a");a.href=cv.toDataURL("image/png");a.download="mockup.png";a.click();}
+draw();
+  
+  
+  
+  
+  
+  
+  c1.oninput = function(){
+    hex1.value = c1.value.toUpperCase();
+    draw();
+};
+
+c2.oninput = function(){
+    hex2.value = c2.value.toUpperCase();
+    draw();
+};
+
+hex1.oninput = function(){
+
+    if(/^#[0-9A-Fa-f]{6}$/.test(hex1.value)){
+        c1.value = hex1.value;
+        draw();
+    }
+
+};
+
+hex2.oninput = function(){
+
+    if(/^#[0-9A-Fa-f]{6}$/.test(hex2.value)){
+        c2.value = hex2.value;
+        draw();
+    }
+
+};
+  
+  
+  
+  
+  
+  
+  function applyPreset(name){
+
+const presets={
+
+appleBlue:["#6F8DFF","#EAF1FF"],
+
+nothingGray:["#E8E8E8","#BFBFBF"],
+
+spaceGray:["#444444","#C2C2C2"],
+
+midnight:["#101820","#394867"],
+
+amoled:["#000000","#2D2D2D"],
+
+titanium:["#737373","#DDDDDD"],
+
+ocean:["#006994","#9BE7FF"],
+
+sky:["#5DADE2","#D6F5FF"],
+
+royalBlue:["#2952CC","#B8D4FF"],
+
+cyan:["#00B8D9","#D9FFFF"],
+
+mint:["#39D98A","#D9FFF1"],
+
+emerald:["#008F68","#BDF4D5"],
+
+forest:["#1B5E20","#A5D6A7"],
+
+olive:["#556B2F","#DCE8C4"],
+
+lime:["#7CB342","#F0FFD8"],
+
+purple:["#7B61FF","#E6DDFF"],
+
+lavender:["#A084E8","#F2EFFF"],
+
+violet:["#5E35B1","#D9CCFF"],
+
+rose:["#D81B60","#FFD7E8"],
+
+pink:["#FF4D8D","#FFE0EC"],
+
+peach:["#FF9E80","#FFF0E8"],
+
+sunset:["#FF6A00","#FFD194"],
+
+gold:["#D4AF37","#FFF6C5"],
+
+amber:["#FFB300","#FFF2B3"],
+
+coffee:["#6F4E37","#D7B899"],
+
+sand:["#C2B280","#F7F0D9"],
+
+glass:["#FFFFFF","#E8EDF7"],
+
+ice:["#D6F3FF","#F8FDFF"],
+
+cyberpunk:["#FF0080","#00F7FF"],
+
+neon:["#00FFAA","#00B3FF"]
+
+};
+
+if(!presets[name]) return;
+
+c1.value=presets[name][0];
+c2.value=presets[name][1];
+
+hex1.value=c1.value.toUpperCase();
+hex2.value=c2.value.toUpperCase();
+
+draw();
+
+}
+  
+  
+  
+  
+  
+  
+  
+  function preset(type){
+
+switch(type){
+
+case "blue":
+
+c1.value="#7F8BFF";
+c2.value="#DCE3FF";
+
+break;
+
+case "purple":
+
+c1.value="#7A5FFF";
+c2.value="#E7D8FF";
+
+break;
+
+case "dark":
+
+c1.value="#111827";
+c2.value="#4B5563";
+
+break;
+
+case "nothing":
+
+c1.value="#F5F5F5";
+c2.value="#D9D9D9";
+
+break;
+
+case "sunset":
+
+c1.value="#FF7A18";
+c2.value="#FFD200";
+
+break;
+
+case "forest":
+
+c1.value="#0F766E";
+c2.value="#A7F3D0";
+
+break;
+
+default:
+
+c1.value="#8F95B8";
+c2.value="#C8CAD6";
+
+}
+
+hex1.value=c1.value.toUpperCase();
+hex2.value=c2.value.toUpperCase();
+
+draw();
+
+}
+  
+  
+  
+  
+  
+</script>
+</body></html>

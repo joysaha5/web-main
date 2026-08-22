@@ -15,17 +15,32 @@
     localStorage.setItem("hb-theme", next);
   }
 
-  document.querySelectorAll("[data-theme-toggle]").forEach(function (btn) {
+  document.querySelectorAll("[data-theme-toggle], .theme-toggle, #theme-toggle").forEach(function (btn) {
     btn.addEventListener("click", toggleTheme);
   });
 
   /* ---------- Robo Popup & 45deg Rotation ---------- */
   function initRoboPopup() {
-    var roboBtn = document.querySelector("[data-robo-toggle]");
+    var roboBtn = document.querySelector("[data-robo-toggle], #robo-btn");
     if (!roboBtn) return;
 
     var overlay = document.querySelector("[data-robo-overlay]");
     var popup = document.querySelector("[data-robo-popup]");
+
+    // Universal base path detection (works across local file://, subfolders, and live web)
+    var base = "";
+    var styleLink = document.querySelector("link[rel='stylesheet'][href*='style.css']");
+    var scriptLink = document.querySelector("script[src*='script.js']");
+    if (styleLink && /^\.\.\//.test(styleLink.getAttribute("href") || "")) {
+      base = "../";
+    } else if (scriptLink && /^\.\.\//.test(scriptLink.getAttribute("src") || "")) {
+      base = "../";
+    } else {
+      var pathname = decodeURIComponent(window.location.pathname || "");
+      if (/app[ -_]?policy/i.test(pathname) || /app%20policy/i.test(window.location.pathname || "")) {
+        base = "../";
+      }
+    }
 
     if (!popup) {
       overlay = document.createElement("div");
@@ -38,7 +53,7 @@
       popup.innerHTML = `
         <div class="robo-popup-header">
           <div class="robo-popup-title">
-            <img src="ROBO.webp" alt="Robo" class="robo-popup-avatar" width="32" height="32" style="width:32px;height:32px;object-fit:cover;border-radius:50%;">
+            <img src="${base}ROBO.webp" alt="Robo" class="robo-popup-avatar" width="32" height="32" style="width:32px;height:32px;object-fit:contain;border-radius:50%;background:transparent;">
             <div>
               <h4>Robo</h4>
               <span>Online • Studio Bot</span>
@@ -48,10 +63,26 @@
         </div>
         <div class="robo-popup-body">
           <div class="robo-msg-bubble">
-            👋 <strong>Hi! I'm Robo.</strong> Welcome to PixelCraftin Studio! Explore our Google Play games, minimal utility apps, or get in touch with our team.
+            👋 <strong>Hi! I'm Robo.</strong> Welcome to PixelCraftin Studio! Explore our minimal apps and games, or get in touch with our team.
           </div>
           <div class="robo-actions-grid">
-            <a href="apps.html" class="robo-action-link">
+            <div class="robo-dropdown-item">
+              <button class="robo-action-link robo-dropdown-btn" type="button" aria-expanded="false" data-robo-mockup-toggle>
+                <span>🎨 Mockup Editor</span>
+                <span class="robo-dropdown-arrow" style="color:var(--accent); font-size:.7rem; transition:transform .25s var(--ease);">▼</span>
+              </button>
+              <div class="robo-dropdown-menu" data-robo-mockup-menu>
+                <a href="${base}Mockups/ios-mockup.html" class="robo-sub-action-link" data-mockup-target="ios" data-mockup-title="iOS Frame Mockup" data-mockup-icon="📱">
+                  <span>📱 iOS Frame Mockup</span>
+                  <span style="color:var(--accent); font-weight:bold; font-size:.75rem;">↗</span>
+                </a>
+                <a href="${base}Mockups/phone-tab-mockup.html" class="robo-sub-action-link" data-mockup-target="tab" data-mockup-title="Phone &amp; Tablet Mockup" data-mockup-icon="💻">
+                  <span>💻 Phone &amp; Tablet Mockup</span>
+                  <span style="color:var(--accent); font-weight:bold; font-size:.75rem;">↗</span>
+                </a>
+              </div>
+            </div>
+            <a href="${base}apps.html" class="robo-action-link">
               <span>📱 All Apps &amp; Tools</span>
               <span style="color:var(--accent); font-weight:bold;">→</span>
             </a>
@@ -59,11 +90,11 @@
               <span>💻 GitHub Source</span>
               <span style="color:var(--accent); font-weight:bold;">→</span>
             </a>
-            <a href="contact.html" class="robo-action-link">
+            <a href="${base}contact.html" class="robo-action-link">
               <span>✉️ Contact Developer</span>
               <span style="color:var(--accent); font-weight:bold;">→</span>
             </a>
-            <a href="privacy.html" class="robo-action-link">
+            <a href="${base}privacy.html" class="robo-action-link">
               <span>🔒 Privacy Policy</span>
               <span style="color:var(--accent); font-weight:bold;">→</span>
             </a>
@@ -72,6 +103,31 @@
       `;
       document.body.appendChild(overlay);
       document.body.appendChild(popup);
+
+      // Mockup dropdown toggle inside popup
+      var mockupToggle = popup.querySelector("[data-robo-mockup-toggle]");
+      var mockupMenu = popup.querySelector("[data-robo-mockup-menu]");
+      if (mockupToggle && mockupMenu) {
+        mockupToggle.addEventListener("click", function (e) {
+          e.stopPropagation();
+          var isExpanded = mockupMenu.classList.toggle("is-open");
+          mockupToggle.classList.toggle("is-active", isExpanded);
+          mockupToggle.setAttribute("aria-expanded", isExpanded);
+        });
+      }
+
+      // Mockup popup modal click triggers
+      popup.querySelectorAll("[data-mockup-target]").forEach(function (link) {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          var targetUrl = link.getAttribute("href");
+          var title = link.getAttribute("data-mockup-title");
+          var icon = link.getAttribute("data-mockup-icon");
+          toggleRobo(false);
+          openMockupModal(targetUrl, title, icon);
+        });
+      });
     }
 
     function toggleRobo(state) {
@@ -98,7 +154,7 @@
       toggleRobo(false);
     });
 
-    popup.querySelectorAll("a").forEach(function (link) {
+    popup.querySelectorAll("a:not([data-mockup-target])").forEach(function (link) {
       link.addEventListener("click", function () {
         toggleRobo(false);
       });
@@ -117,10 +173,136 @@
     });
   }
 
+  /* ---------- Mockup Centered Modal Window ---------- */
+  var mockupOverlay = null;
+  var mockupIframe = null;
+  var mockupTitleEl = null;
+  var mockupFullscreenBtn = null;
+  var mockupIconEl = null;
+
+  function initMockupModal() {
+    if (mockupOverlay || document.querySelector("[data-mockup-modal-overlay]")) return;
+
+    mockupOverlay = document.createElement("div");
+    mockupOverlay.className = "mockup-modal-overlay";
+    mockupOverlay.setAttribute("data-mockup-modal-overlay", "");
+    mockupOverlay.innerHTML = `
+      <div class="mockup-modal-window" data-mockup-modal-window>
+        <div class="mockup-modal-header">
+          <div class="mockup-modal-title">
+            <span class="mockup-modal-icon" data-mockup-icon>🎨</span>
+            <h3 data-mockup-title>Mockup Generator</h3>
+          </div>
+          <div class="mockup-modal-controls">
+            <a href="#" target="_blank" rel="noopener" class="mockup-modal-btn" data-mockup-fullscreen title="Open in new window" aria-label="Open in new window">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+            <button class="mockup-modal-close" data-mockup-close aria-label="Close mockup window">&times;</button>
+          </div>
+        </div>
+        <div class="mockup-modal-body">
+          <iframe class="mockup-iframe" data-mockup-iframe title="Mockup Editor" src="about:blank" allow="clipboard-write"></iframe>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(mockupOverlay);
+
+    mockupIframe = mockupOverlay.querySelector("[data-mockup-iframe]");
+    mockupTitleEl = mockupOverlay.querySelector("[data-mockup-title]");
+    mockupFullscreenBtn = mockupOverlay.querySelector("[data-mockup-fullscreen]");
+    mockupIconEl = mockupOverlay.querySelector("[data-mockup-icon]");
+    var closeBtn = mockupOverlay.querySelector("[data-mockup-close]");
+
+    function closeMockupModal() {
+      mockupOverlay.classList.remove("is-open");
+      document.body.style.overflow = "";
+      setTimeout(function () {
+        if (!mockupOverlay.classList.contains("is-open")) {
+          mockupIframe.src = "about:blank";
+        }
+      }, 300);
+    }
+
+    if (closeBtn) {
+      closeBtn.addEventListener("click", closeMockupModal);
+    }
+
+    mockupOverlay.addEventListener("click", function (e) {
+      if (e.target === mockupOverlay) {
+        closeMockupModal();
+      }
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && mockupOverlay && mockupOverlay.classList.contains("is-open")) {
+        closeMockupModal();
+      }
+    });
+  }
+
+  function openMockupModal(url, title, icon) {
+    if (!mockupOverlay) {
+      initMockupModal();
+    }
+    if (mockupTitleEl) mockupTitleEl.textContent = title || "Mockup Editor";
+    if (mockupFullscreenBtn) mockupFullscreenBtn.href = url;
+    if (mockupIconEl && icon) mockupIconEl.textContent = icon;
+    if (mockupIframe) mockupIframe.src = url;
+
+    mockupOverlay.classList.add("is-open");
+    document.body.style.overflow = "hidden";
+  }
+
+  /* ---------- The Team Modal ---------- */
+  function initTeamModal() {
+    var teamOverlay = document.querySelector("[data-team-modal-overlay]");
+    if (!teamOverlay) return;
+
+    var triggers = document.querySelectorAll("[data-open-team-modal]");
+    var closeBtn = teamOverlay.querySelector("[data-team-modal-close]");
+
+    function openTeamModal(e) {
+      if (e) e.preventDefault();
+      teamOverlay.classList.add("is-open");
+      teamOverlay.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeTeamModal() {
+      teamOverlay.classList.remove("is-open");
+      teamOverlay.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    triggers.forEach(function (btn) {
+      btn.addEventListener("click", openTeamModal);
+    });
+
+    if (closeBtn) {
+      closeBtn.addEventListener("click", closeTeamModal);
+    }
+
+    teamOverlay.addEventListener("click", function (e) {
+      if (e.target === teamOverlay) {
+        closeTeamModal();
+      }
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && teamOverlay.classList.contains("is-open")) {
+        closeTeamModal();
+      }
+    });
+  }
+
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initRoboPopup);
+    document.addEventListener("DOMContentLoaded", function () {
+      initRoboPopup();
+      initTeamModal();
+    });
   } else {
     initRoboPopup();
+    initTeamModal();
   }
 
   /* ---------- Mobile nav ---------- */

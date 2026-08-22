@@ -19,7 +19,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="PixelCraftin">
   <meta name="theme-color" content="#0a0a0c">
-  <link rel="stylesheet" href="css/style.css?v=2.3">
+  <link rel="stylesheet" href="css/style.css?v=3.0">
 </head>
 
 <body>
@@ -39,7 +39,8 @@
       </nav>
       <div class="header-actions">
         <button class="robo-btn" data-robo-toggle aria-label="Open Robo">
-          <img src="ROBO.webp" alt="Robo" class="robo-icon" width="24" height="24" style="width:24px;height:24px;object-fit:contain;background:transparent;">
+          <img src="ROBO.webp" alt="Robo" class="robo-icon" width="32" height="32"
+            style="width:32px;height:32px;object-fit:contain;background:transparent;">
         </button>
         <button class="theme-toggle" data-theme-toggle aria-label="Toggle color theme">
           <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
@@ -196,8 +197,34 @@
         </div>
       </div>
 
+      <!-- The Team Trigger -->
+      <div class="team-trigger-wrap">
+        <button class="team-trigger-btn" data-open-team-modal aria-label="Meet The Team">
+          <span>👥 The Team</span>
+          <span style="color: var(--accent);">→</span>
+        </button>
+      </div>
+
     </div>
   </main>
+
+  <!-- The Team Modal Popup (Matching IMG_7619.jpg) -->
+  <div class="team-modal-overlay" data-team-modal-overlay aria-hidden="true">
+    <div class="team-simple-card" role="dialog" aria-modal="true" aria-labelledby="team-simple-title">
+      <button class="team-simple-close" data-team-modal-close aria-label="Close modal">&times;</button>
+      <h3 id="team-simple-title" class="team-simple-title">THE TEAM</h3>
+      <div class="team-simple-grid">
+        <div class="team-simple-box">
+          <span class="team-simple-label">LEAD DEVELOPER</span>
+          <span class="team-simple-val">Mr. JOY</span>
+        </div>
+        <div class="team-simple-box">
+          <span class="team-simple-label">HQ LOCATION</span>
+          <span class="team-simple-val">India</span>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <footer>
     <div class="wrap">
@@ -255,6 +282,8 @@
         <div class="footer-bottom-links">
           <a href="about.html" class="active">About Us</a>
           <span class="sep">•</span>
+          <a href="#the-team" data-open-team-modal>The Team</a>
+          <span class="sep">•</span>
           <a href="faq.html">FAQ</a>
           <span class="sep">•</span>
           <a href="privacy.html">Privacy Policy</a>
@@ -268,7 +297,7 @@
     </div>
   </footer>
 
-  <script src="js/script.js"></script>
+  <script src="js/script.js?v=3.0"></script>
 </body>
 
 </html>
